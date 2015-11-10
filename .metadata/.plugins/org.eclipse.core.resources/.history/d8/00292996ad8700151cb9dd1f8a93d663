@@ -7,6 +7,6 @@ public class game {
 	
 	public static void run(){
 		Dice dice = new Dice();
-		dice.ThrowDie(7,12);
+		dice.ThrowDie(1,6);
 	}
 }
