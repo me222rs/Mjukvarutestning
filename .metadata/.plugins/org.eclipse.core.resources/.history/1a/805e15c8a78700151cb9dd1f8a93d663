@@ -1,0 +1,14 @@
+package Yatzy;
+
+import java.util.Random;
+
+public class Dice {
+	private int value;
+	private Random random;
+	
+	public Dice(){
+		value = 0;
+		random = new Random();
+	}
+
+}
