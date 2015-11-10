@@ -16,7 +16,7 @@ public class mainTest {
 	   public void test_diceValues() {
 		   Dice die = new Dice();
 		   die.ThrowDie(min,max);
-		   assertTrue(die.GetValue() <= max && die.GetValue() >= min);
+		   assertTrue(die.GetValue() <= 6 && die.GetValue() >= 1);
 	   }
 	
 }
