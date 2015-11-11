@@ -6,27 +6,33 @@ import java.util.List;
 public class game {
 	public static final int min = 1;
 	public static final int max = 6;
-	public static List<Dice> diceList = new ArrayList<Dice>();
+	List<Dice> diceList = new ArrayList<Dice>();
 	
-	public static void main(String[] args){
+	public void main(String[] args){
 		//menuInput();
 		run();
 	}
 	
-	public static void run(){
+	public void run(){
 		ThrowDices(5);
 		
 		//Call ThrowDices
 	}
 	
 	//Method that throws a specified amount of dices
-	public static void ThrowDices(int times){
-
+	public void ThrowDices(int times){
+		//Array to store the dices
+		//List<Dice> diceList = new ArrayList<Dice>();
+		//for loop
 		for(int i=0;i<times;i++){
 			Dice dice = new Dice();
 			dice.ThrowDie(min,max);
 			diceList.add(dice);
 		}
+		
+		//returns the dice array
+		//return diceList;
+		
 	}
 	
 	public void showMenu(int choice){

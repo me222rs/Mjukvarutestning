@@ -27,6 +27,8 @@ public class game {
 			dice.ThrowDie(min,max);
 			diceList.add(dice);
 		}
+		
+		
 	}
 	
 	public void showMenu(int choice){

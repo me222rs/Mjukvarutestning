@@ -31,8 +31,9 @@ public class mainTest {
 	   //Testing if exception is thrown if more than 5 dices are thrown
 	   @Test(expected=IndexOutOfBoundsException.class)
 	   public void test_numberOfThrows(){
+		   List<Dice> dice = new ArrayList<Dice>();
 		   game g = new game();
-		   g.ThrowDices(6);
+		   dice = g.ThrowDices(6);
 	   }
 	
 }

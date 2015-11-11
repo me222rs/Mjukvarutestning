@@ -21,12 +21,15 @@ public class game {
 	
 	//Method that throws a specified amount of dices
 	public static void ThrowDices(int times){
-
+		//Array to store the dices
+		//List<Dice> diceList = new ArrayList<Dice>();
 		for(int i=0;i<times;i++){
 			Dice dice = new Dice();
 			dice.ThrowDie(min,max);
 			diceList.add(dice);
 		}
+		
+		
 	}
 	
 	public void showMenu(int choice){
