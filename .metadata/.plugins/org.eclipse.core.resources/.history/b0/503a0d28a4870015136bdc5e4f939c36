@@ -1,9 +1,0 @@
-package tests;
-
-public class Test {
-	   @Test
-	   public void test_intListPosition() {
-	      
-	   }
-	
-}

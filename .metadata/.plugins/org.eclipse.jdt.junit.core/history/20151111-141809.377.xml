@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="mainTest" project="Mjukvarutestning" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="tests.mainTest" time="0.137">
-    <testcase name="test_diceValues" classname="tests.mainTest" time="0.001"/>
-    <testcase name="test_menu" classname="tests.mainTest" time="0.136"/>
-  </testsuite>
-</testrun>
