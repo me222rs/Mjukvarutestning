@@ -1,7 +1,15 @@
 package tests;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.mockito.Matchers.anyString;
 import static org.junit.Assert.*;
 import org.junit.Test;
-
 import Yatzy.Dice;
 import Yatzy.game;
 
@@ -17,6 +25,14 @@ public class mainTest {
 		   Dice die = new Dice();
 		   die.ThrowDie(min,max);
 		   assertTrue(die.GetValue() <= max && die.GetValue() >= min);
+	   }
+	   
+	   //Testing if exception is thrown if more than 5 dices are thrown
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_numberOfThrows(){
+		   List<Dice> dice = new ArrayList<Dice>();
+		   game g = new game();
+		   dice = g.ThrowDices(6);
 	   }
 	
 }
