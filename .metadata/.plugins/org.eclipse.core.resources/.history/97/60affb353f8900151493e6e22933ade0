@@ -86,12 +86,6 @@ public class game {
 			}
 		    choice = Integer.parseInt(choiceAsString);
 		    
-		    if(choice > 1)
-		    {
-		    	throw new IndexOutOfBoundsException();
-		    }
-		    
-		    
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

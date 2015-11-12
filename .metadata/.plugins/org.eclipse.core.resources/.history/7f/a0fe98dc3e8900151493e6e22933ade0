@@ -52,12 +52,5 @@ public class mainTest {
 		   game g = new game();
 		   g.menuInput(in);
 	   }
-	   
-	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_ChoiceExceptionTest(){
-		   ByteArrayInputStream in = new ByteArrayInputStream("0".getBytes());
-		   game g = new game();
-		   g.menuInput(in);
-	   }
 	
 }
