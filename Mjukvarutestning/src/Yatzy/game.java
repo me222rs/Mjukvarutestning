@@ -1,7 +1,15 @@
 package Yatzy;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 public class game {
 	//static fields
@@ -17,7 +25,23 @@ public class game {
 	}
 	//run method for the game
 	public static void run(){
-		//Call ThrowDices
+		//Call ThrowDice
+		//Menu
+		System.out.println("----Menu----");
+		System.out.println("1 - Play");
+		System.out.println("2 - Results");
+		
+		Scanner scanner = new Scanner(System.in);
+     	int input = scanner.nextInt();
+     	
+     	StringBuilder sb = new StringBuilder();
+     	sb.append("");
+     	sb.append(input);
+     	String inputString = sb.toString();
+     	
+     	ByteArrayInputStream in = new ByteArrayInputStream(inputString.getBytes());
+		menuInput(in);
+		
 		ThrowDices(5);
 		
 		
@@ -41,12 +65,29 @@ public class game {
 		}
 	}
 	
-	public void showMenu(int choice){
-		//TODO Implement menu
+	public static void showMenu(int choice){
+		//Switch statement
+		System.out.println(choice);
 	}
 	
-	public static int menuInput(){
-		//TODO Implement menu
-		return 0;
+	public static void menuInput(InputStream in){
+		//Read menu input
+
+		int choice = 0;
+		String test = "";
+		
+		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
+
+		    choice = Integer.parseInt(reader.readLine());
+		    
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		showMenu(choice);
 	}
 }

@@ -4,7 +4,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 import static org.mockito.Matchers.anyString;
@@ -41,6 +44,13 @@ public class mainTest {
 	   public void test_numberOfThrowsExceptionTest_LowValue(){
 		   game g = new game();
 		   g.ThrowDices(4);
+	   }
+	   
+	   @Test(expected=InputMismatchException.class)
+	   public void test_ChoiceExceptionTest(){
+		   ByteArrayInputStream in = new ByteArrayInputStream("t".getBytes());
+		   game g = new game();
+		   g.menuInput(in);
 	   }
 	
 }
