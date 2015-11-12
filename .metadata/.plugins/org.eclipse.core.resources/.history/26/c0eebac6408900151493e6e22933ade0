@@ -88,7 +88,7 @@ public class game {
 		    
 		    if(choice < 1 || choice > 2)
 		    {
-		    	throw new IndexOutOfBoundsException("Error! Not in range.");
+		    	throw new IndexOutOfBoundsException();
 		    }
 		    
 		    
