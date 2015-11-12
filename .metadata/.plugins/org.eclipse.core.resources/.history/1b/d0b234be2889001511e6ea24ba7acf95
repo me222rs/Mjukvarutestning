@@ -28,7 +28,6 @@ public class game {
 		if(numberOfDices > max_dices ){
 			throw new IndexOutOfBoundsException("Error! Can't be more than 5 dices.");
 		}
-		//Code and test by Emil.
 		else if(numberOfDices < max_dices){
 			throw new IndexOutOfBoundsException("Error! Can't be less than 5 dices.");
 		}
