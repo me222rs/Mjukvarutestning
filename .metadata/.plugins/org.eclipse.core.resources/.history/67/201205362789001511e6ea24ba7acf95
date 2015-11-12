@@ -25,7 +25,7 @@ public class game {
 	//rector code by Emil.
 	//Method that throws a specified amount of dices
 	public static void ThrowDices(int numberOfDices){
-		if(numberOfDices > max_dices && numberOfDices < max_dices){
+		if(numberOfDices > max_dices || numberOfDices < max_dices){
 			throw new IndexOutOfBoundsException();
 		}
 		else{
