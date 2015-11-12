@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -70,20 +69,14 @@ public class game {
 		System.out.println(choice);
 	}
 	
-	//Code Mikael
 	public static void menuInput(InputStream in){
 		//Read menu input
 
 		int choice = 0;
-		String test = "";
+		
 		
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
-			test = reader.readLine();
-			if(!test.matches("-?\\d+(\\.\\d+)?")){
-				throw new InputMismatchException();
-			}
 		    choice = Integer.parseInt(reader.readLine());
-		    
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

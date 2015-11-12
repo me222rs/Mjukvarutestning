@@ -70,7 +70,6 @@ public class game {
 		System.out.println(choice);
 	}
 	
-	//Code Mikael
 	public static void menuInput(InputStream in){
 		//Read menu input
 
@@ -79,7 +78,7 @@ public class game {
 		
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
 			test = reader.readLine();
-			if(!test.matches("-?\\d+(\\.\\d+)?")){
+			if(test.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException();
 			}
 		    choice = Integer.parseInt(reader.readLine());

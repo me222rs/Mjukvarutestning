@@ -70,7 +70,6 @@ public class game {
 		System.out.println(choice);
 	}
 	
-	//Code Mikael
 	public static void menuInput(InputStream in){
 		//Read menu input
 
