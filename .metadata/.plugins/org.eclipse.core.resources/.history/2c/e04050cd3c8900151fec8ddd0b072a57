@@ -47,7 +47,7 @@ public class mainTest {
 	   }
 	   
 	   @Test(expected=InputMismatchException.class)
-	   public void test_MenuChoiceExceptionTest_NotInteger(){
+	   public void test_MenuChoiceExceptionTest(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("t".getBytes());
 		   game g = new game();
 		   g.menuInput(in);

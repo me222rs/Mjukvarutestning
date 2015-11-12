@@ -75,7 +75,7 @@ public class game {
 	public static void menuInput(InputStream in){
 		//Read menu input
 
-		int choice = 0;
+		//int choice = 0;
 		String choiceAsString = "";
 		
 		//BufferedReader is used so that we can test the menu input
@@ -84,7 +84,7 @@ public class game {
 			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException("Error! Only integers allowed.");
 			}
-		    choice = Integer.parseInt(choiceAsString);
+		    int choice = Integer.parseInt(reader.readLine());
 		    
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

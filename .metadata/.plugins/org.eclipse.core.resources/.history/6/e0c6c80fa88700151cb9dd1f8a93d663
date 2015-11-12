@@ -1,7 +1,0 @@
-package Yatzy;
-
-public class game {
-	public int testing(){
-		return 2;
-	}
-}

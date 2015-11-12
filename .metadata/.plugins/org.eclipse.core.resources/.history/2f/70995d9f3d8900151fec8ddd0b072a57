@@ -84,7 +84,7 @@ public class game {
 			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException("Error! Only integers allowed.");
 			}
-		    choice = Integer.parseInt(choiceAsString);
+		    choice = Integer.parseInt(reader.readLine());
 		    
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

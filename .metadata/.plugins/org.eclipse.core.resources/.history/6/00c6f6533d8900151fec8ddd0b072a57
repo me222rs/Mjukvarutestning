@@ -71,7 +71,7 @@ public class game {
 		System.out.println(choice);
 	}
 	
-	//Code Mikael, Refector Emil & Mikael
+	//Code Mikael
 	public static void menuInput(InputStream in){
 		//Read menu input
 
@@ -84,7 +84,7 @@ public class game {
 			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException("Error! Only integers allowed.");
 			}
-		    choice = Integer.parseInt(choiceAsString);
+		    choice = Integer.parseInt(reader.readLine());
 		    
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
