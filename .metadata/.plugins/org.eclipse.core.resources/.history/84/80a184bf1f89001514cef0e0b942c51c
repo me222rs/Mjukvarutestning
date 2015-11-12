@@ -34,5 +34,13 @@ public class mainTest {
 		   game g = new game();
 		   g.ThrowDices(6);
 	   }
+	   
+	   //Test written by Mikael
+	   //Testing if exception is thrown if less than 1 dices are thrown
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_numberOfThrowsExceptionTest_LowValue(){
+		   game g = new game();
+		   g.ThrowDices(-1);
+	   }
 	
 }

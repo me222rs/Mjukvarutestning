@@ -34,5 +34,11 @@ public class mainTest {
 		   game g = new game();
 		   g.ThrowDices(6);
 	   }
+	   
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_numberOfThrowsExceptionTest_LowValue(){
+		   game g = new game();
+		   g.ThrowDices(-1);
+	   }
 	
 }

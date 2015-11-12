@@ -30,7 +30,7 @@ public class mainTest {
 	   //Test written by Mikael
 	   //Testing if exception is thrown if more than 5 dices are thrown
 	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_numberOfThrowsExceptionTest_HighValue(){
+	   public void test_numberOfThrows(){
 		   game g = new game();
 		   g.ThrowDices(6);
 	   }
