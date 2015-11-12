@@ -21,9 +21,7 @@ public class game {
 	
 	//Method that throws a specified amount of dices
 	public static void ThrowDices(int times){
-		if(times > 5 || times < 1){
-			throw new IndexOutOfBoundsException();
-		}
+
 		for(int i=0;i<times;i++){
 			Dice dice = new Dice();
 			dice.ThrowDie(min,max);
