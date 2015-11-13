@@ -61,7 +61,7 @@ public class mainTest {
 	   }
 	   
 	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_CheckDiceListSize(){
+	   public void test_CheckDiceListSize_NotInRange(){
 		   game g = new game();
 		   g.ThrowDices(5);
 		   g.PrintResult(4);
