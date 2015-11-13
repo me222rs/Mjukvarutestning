@@ -72,7 +72,7 @@ public class game {
 	public static void PrintResult(int num){
 		System.out.println(num);
 		System.out.println(diceList.size());
-		if(diceList.size() != 5)
+		if(diceList.size() != num)
 		{
 			throw new IndexOutOfBoundsException();
 		}
