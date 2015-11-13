@@ -59,5 +59,15 @@ public class mainTest {
 		   game g = new game();
 		   g.menuInput(in);
 	   }
+	   
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_DiceList_NotInRange(){
+		   game g = new game();
+		   g.ThrowDices(5);
+		   
+		   g.PrintResult(5);
+		   
+		   //assertEquals(g.diceList.size(), 5);
+	   }
 	
 }

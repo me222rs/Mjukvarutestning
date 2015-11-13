@@ -44,6 +44,7 @@ public class game {
 		menuInput(in);
 		
 		ThrowDices(max_dices);
+
 		
 		
 	}
@@ -63,12 +64,26 @@ public class game {
 				dice.ThrowDie(min,max);
 				diceList.add(dice);
 			}
+			//PrintResult(diceList.size());
+
+		}
+	}
+	
+	public static void PrintResult(int num){
+		System.out.println(num);
+		System.out.println(diceList.size());
+		if(diceList.size() != num)
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		for(int i=0;i<diceList.size();i++){
+			System.out.println(diceList.get(i).GetValue());
 		}
 	}
 	
 	public static void showMenu(int choice){
 		//Switch statement
-		System.out.println(choice);
+		//System.out.println(choice);
 	}
 	
 	//Code Mikael, Refector Emil & Mikael
