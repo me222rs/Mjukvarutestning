@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;max_dices&apos; in &apos;Yatzy.game&apos; to &apos;fiveDices&apos;&#x0D;&#x0A;- Original project: &apos;Mjukvarutestning&apos;&#x0D;&#x0A;- Original element: &apos;Yatzy.game.max_dices&apos;&#x0D;&#x0A;- Renamed element: &apos;Yatzy.game.fiveDices&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;max_dices&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;Yatzy{game.java[game^max_dices" name="fiveDices" references="true" setter="false" stamp="1447773142675" textual="false" version="1.0"/>
+</session>

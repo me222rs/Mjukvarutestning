@@ -17,7 +17,7 @@ public class game {
 	//static fields
 	public final int min = 1;
 	public final int max = 6;
-	public final int fiveDices = 5;
+	public final int max_dices = 5;
 	public List<Dice> diceList = new ArrayList<Dice>();
 	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	public int choice;
@@ -65,11 +65,11 @@ public class game {
 	//refactor code by Emil.
 	//Method that throws a specified amount of dices
 	public void ThrowDices(int numberOfDices){
-		if(numberOfDices > fiveDices ){
+		if(numberOfDices > max_dices ){
 			throw new IndexOutOfBoundsException("Error! Can't be more than 5 dices.");
 		}
 		//Code and test by Emil.
-		else if(numberOfDices < fiveDices){
+		else if(numberOfDices < max_dices){
 			throw new IndexOutOfBoundsException("Error! Can't be less than 5 dices.");
 		}
 		else{
@@ -105,8 +105,8 @@ public class game {
         {	
         	case 1:
         	{
-        		ThrowDices(fiveDices);
-        		PrintResult(fiveDices);
+        		ThrowDices(5);
+        		PrintResult(5);
         		
         		break;
         	}

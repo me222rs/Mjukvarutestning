@@ -37,13 +37,13 @@ public class mainTest {
 	   //implementing refactor code.
 	   //Testing if exception is thrown if more than 5 dices are thrown
 	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_numberOfDicesExceptionTest_HighValue(){
+	   public void test_numberOfThrowsExceptionTest_HighValue(){
 		   game g = new game();
 		   g.ThrowDices(6);
 	   }
 	   
 	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_numberOfDicesExceptionTest_LowValue(){
+	   public void test_numberOfThrowsExceptionTest_LowValue(){
 		   game g = new game();
 		   g.ThrowDices(4);
 	   }
