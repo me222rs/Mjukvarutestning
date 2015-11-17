@@ -16,4 +16,7 @@
 <fullyQualifiedTypeName name="org.mockito.Mockito"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.junit.Rule"/>
+<fullyQualifiedTypeName name="org.junit.contrib.java.lang.system.ExpectedSystemExit"/>
 </qualifiedTypeNameHistroy>
