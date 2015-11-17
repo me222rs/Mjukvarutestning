@@ -132,9 +132,7 @@ public class game {
 		{
 			doExit();
 		}
-		else
-		{
-			showMenu(choice);
-		}
+		
+		showMenu(choice);
 	}
 }
