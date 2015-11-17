@@ -21,8 +21,14 @@ public class game {
 	public List<Dice> diceList = new ArrayList<Dice>();
 	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	
+	public game(){
+		//run();
+	}
+	
 	//start method
 	public static void main(String[] args){
+		//menuInput();
+		//run();
 		game g = new game();
 		g.run();
 		
@@ -58,6 +64,10 @@ public class game {
 	//refactor code by Emil.
 	//Method that throws a specified amount of dices
 	public void ThrowDices(int numberOfDices){
+		
+		//System.out.print("hello");
+		//System.setOut(new PrintStream(outContent));
+		
 		if(numberOfDices > max_dices ){
 			throw new IndexOutOfBoundsException("Error! Can't be more than 5 dices.");
 		}
@@ -84,7 +94,6 @@ public class game {
 		for(int i=0;i<diceList.size();i++){
 			System.out.print(diceList.get(i).GetValue() + " ");
 		}
-		
 	}
 	
 	public void showMenu(int choice){
