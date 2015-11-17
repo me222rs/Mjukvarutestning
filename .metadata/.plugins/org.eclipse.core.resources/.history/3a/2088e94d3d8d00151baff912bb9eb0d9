@@ -82,7 +82,7 @@ public class mainTest {
 
 	   //Testing the dice console output of the PrintResult() method
 	   //Test written by Mikael
-	  // @Test
+	   @Test
 	   public void test_resultOutput() {
 	       game g = new game();
 	       Dice d = new Dice();
