@@ -2,9 +2,11 @@ package Yatzy;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -13,25 +15,38 @@ import java.util.Scanner;
 
 public class game {
 	//static fields
-	public static final int min = 1;
-	public static final int max = 6;
-	public static final int max_dices = 5;
-	public static List<Dice> diceList = new ArrayList<Dice>();
+	public final int min = 1;
+	public final int max = 6;
+	public final int max_dices = 5;
+	public List<Dice> diceList = new ArrayList<Dice>();
+	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	public game(){
+		//run();
+	}
 	
 	//start method
 	public static void main(String[] args){
 		//menuInput();
-		run();
+		//run();
+		game g = new game();
+		g.run();
+		
+	}
+	
+	public Dice GetDiceByNumber(int num){
+		
+		return diceList.get(num);
+		
 	}
 	//run method for the game
-	public static void run(){
+	public void run(){
 		int input;
-		//Call ThrowDice
-		//Menu
+		
 		System.out.println("----Menu----");
 		System.out.println("1 - Play");
 		System.out.println("2 - Results");
-		
+
 		Scanner scanner = new Scanner(System.in);
      	input = scanner.nextInt();
      	
@@ -44,13 +59,15 @@ public class game {
 		menuInput(in);
 		
 		ThrowDices(max_dices);
-
-		
-		
+		PrintResult(5);
 	}
-	//rector code by Emil.
+	//refactor code by Emil.
 	//Method that throws a specified amount of dices
-	public static void ThrowDices(int numberOfDices){
+	public void ThrowDices(int numberOfDices){
+		
+		//System.out.print("hello");
+		//System.setOut(new PrintStream(outContent));
+		
 		if(numberOfDices > max_dices ){
 			throw new IndexOutOfBoundsException("Error! Can't be more than 5 dices.");
 		}
@@ -67,23 +84,24 @@ public class game {
 		}
 	}
 	
-	public static void PrintResult(int num){
+	public void PrintResult(int num){
 		if(diceList.size() != num)
 		{
 			throw new IndexOutOfBoundsException();
 		}
+
 		for(int i=0;i<diceList.size();i++){
-			System.out.println(diceList.get(i).GetValue());
+			System.out.print(diceList.get(i).GetValue() + " ");
 		}
 	}
 	
-	public static void showMenu(int choice){
+	public void showMenu(int choice){
 		//Switch statement
 		//System.out.println(choice);
 	}
 	
 	//Code Mikael, Refector Emil & Mikael
-	public static void menuInput(InputStream in){
+	public void menuInput(InputStream in){
 		//Read menu input
 
 		int choice = 0;

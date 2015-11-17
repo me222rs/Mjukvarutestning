@@ -1,16 +1,10 @@
 package tests;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
+import static org.mockito.Mockito.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-
-import static org.mockito.Matchers.anyString;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import Yatzy.Dice;
@@ -66,5 +60,24 @@ public class mainTest {
 		   g.ThrowDices(5);
 		   g.PrintResult(4);
 	   }
-	
+
+	   //Testing the dice console output of the PrintResult() method
+	   @Test
+	   public void test_resultOutput() {
+	       game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+	       d.SetValue(1);
+	       g.diceList.clear();
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.PrintResult(5);
+	       assertEquals("1 1 1 1 1 ", g.outContent.toString());
+	   }
+	   
+	//Test returning a specific dice that should be rethrown
 }

@@ -18,5 +18,9 @@ public class Dice {
 	public int GetValue(){
 		return value;
 	}
+	
+	public void SetValue(int num){
+		value = num;
+	}
 
 }
