@@ -6,11 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import static org.junit.Assert.*;
-
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.ExpectedSystemExit;
-
 import Yatzy.Dice;
 import Yatzy.game;
 
@@ -20,10 +16,6 @@ public class mainTest {
 	//private field with minumum and maximun values allowed
 	private static final int min = 1;
 	private static final int max = 6;
-	
-	@Rule
-    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
-   
 	
 	   @Test
 	   //Test by Emil and Mikael.
@@ -69,17 +61,12 @@ public class mainTest {
 		   g.menuInput(in);
 	   }
 	   
-	   
-	   
-	   
-	   @Test
-	    public void Test_systemExit() {
-			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
-			game g = new game();
-			g.menuInput(in);
-	        exit.expectSystemExitWithStatus(0);
-	        
-	    }
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_MenuExit(){
+		   ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
+		   game g = new game();
+		   g.menuInput(in);
+	   }
 	   
 	   @Test(expected=IndexOutOfBoundsException.class)
 	   public void test_CheckDiceListSize(){

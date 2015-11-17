@@ -74,9 +74,6 @@ public class mainTest {
 	   
 	   @Test
 	    public void Test_systemExit() {
-			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
-			game g = new game();
-			g.menuInput(in);
 	        exit.expectSystemExitWithStatus(0);
 	        
 	    }

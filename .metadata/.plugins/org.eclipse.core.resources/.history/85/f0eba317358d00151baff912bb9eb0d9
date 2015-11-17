@@ -73,10 +73,7 @@ public class mainTest {
 	   
 	   
 	   @Test
-	    public void Test_systemExit() {
-			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
-			game g = new game();
-			g.menuInput(in);
+	    public void systemExitWithSelectedStatusCode0() {
 	        exit.expectSystemExitWithStatus(0);
 	        
 	    }
