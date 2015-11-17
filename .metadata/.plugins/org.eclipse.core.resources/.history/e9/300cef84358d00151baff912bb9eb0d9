@@ -127,12 +127,7 @@ public class game {
 			
 			e.printStackTrace();
 		}
-		
-		if(choice == 3)
-		{
-			doExit();
-		}
-		
+
 		showMenu(choice);
 	}
 }

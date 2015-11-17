@@ -96,7 +96,7 @@ public class game {
 	
 	public void doExit()
 	{
-		System.exit(0);
+		//System.exit(0);
 	}
 	
 	//Code Mikael, Refector Emil & Mikael

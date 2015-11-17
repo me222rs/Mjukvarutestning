@@ -104,7 +104,7 @@ public class mainTest {
 	   
 	   @Test
 	    public void Test_systemExit() {
-		    exit.expectSystemExitWithStatus(0);
+		   exit.expectSystemExitWithStatus(0);
 			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
 			game g = new game();
 			g.menuInput(in);

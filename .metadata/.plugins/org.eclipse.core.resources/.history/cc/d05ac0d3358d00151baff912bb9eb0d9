@@ -130,7 +130,7 @@ public class game {
 		
 		if(choice == 3)
 		{
-			doExit();
+			System.exit(1);
 		}
 		
 		showMenu(choice);
