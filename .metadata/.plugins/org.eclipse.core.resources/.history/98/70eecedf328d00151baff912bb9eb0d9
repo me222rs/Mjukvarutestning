@@ -20,8 +20,6 @@ public class game {
 	public final int max_dices = 5;
 	public List<Dice> diceList = new ArrayList<Dice>();
 	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	public int choice;
-	public String choiceAsString;
 	
 	//start method
 	public static void main(String[] args){
@@ -98,8 +96,8 @@ public class game {
 	public void menuInput(InputStream in){
 		//Read menu input
 
-		choice = 0;
-		choiceAsString = "";
+		int choice = 0;
+		String choiceAsString = "";
 		
 		//BufferedReader is used so that we can test the menu input
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
@@ -116,10 +114,10 @@ public class game {
 		    
 		    
 		} catch (UnsupportedEncodingException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
