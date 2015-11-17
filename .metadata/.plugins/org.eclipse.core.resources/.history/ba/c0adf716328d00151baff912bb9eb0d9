@@ -107,7 +107,7 @@ public class game {
 			}
 		    choice = Integer.parseInt(choiceAsString);
 		    
-		    if(choice > 2 || choice < 1 )
+		    if(choice < 1 )
 		    {
 		    	throw new IndexOutOfBoundsException("Error! Not in range.");
 		    }
