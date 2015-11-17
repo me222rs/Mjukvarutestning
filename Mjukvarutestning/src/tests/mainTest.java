@@ -48,8 +48,15 @@ public class mainTest {
 	   }
 	   
 	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_MenuChoiceExceptionTest_NotInRange(){
+	   public void test_MenuChoiceExceptionTest_NotInRange_Low(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("0".getBytes());
+		   game g = new game();
+		   g.menuInput(in);
+	   }
+	   
+	   @Test(expected=IndexOutOfBoundsException.class)
+	   public void test_MenuChoiceExceptionTest_NotInRange(){
+		   ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
 		   game g = new game();
 		   g.menuInput(in);
 	   }
