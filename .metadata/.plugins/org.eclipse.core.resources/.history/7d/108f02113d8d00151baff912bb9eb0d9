@@ -38,7 +38,7 @@ public class game {
 	
 	public int ListSize()
 	{
-		return 4;
+		return diceList.size();
 	}
 	//run method for the game
 	public void run(){

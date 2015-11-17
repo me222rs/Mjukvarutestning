@@ -35,11 +35,6 @@ public class game {
 		return diceList.get(num);
 		
 	}
-	
-	public int ListSize()
-	{
-		return 4;
-	}
 	//run method for the game
 	public void run(){
 		int input;
@@ -87,11 +82,10 @@ public class game {
 		{
 			throw new IndexOutOfBoundsException();
 		}
-		//System.setOut(new PrintStream(outContent));
+		
 		for(int i=0;i<diceList.size();i++){
-			
 			System.out.print(diceList.get(i).GetValue() + " ");
-			
+			System.setOut(new PrintStream(outContent));
 		}
 		
 	}
@@ -107,7 +101,6 @@ public class game {
         	{
         		ThrowDices(5);
         		PrintResult(5);
-        		
         		break;
         	}
         	

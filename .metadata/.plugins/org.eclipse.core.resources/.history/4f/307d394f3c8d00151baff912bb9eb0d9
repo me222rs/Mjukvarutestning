@@ -112,13 +112,12 @@ public class mainTest {
 	        
 	    }
 	   
-	   @Test
+	   @Test(expected=IndexOutOfBoundsException.class)
 	   public void test_ThrowDiceMenu(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 		   game g = new game();
 		   g.menuInput(in);
-		  
-		   assertEquals(g.ListSize(), 5);
+		   
 	   }
 	   
 	   

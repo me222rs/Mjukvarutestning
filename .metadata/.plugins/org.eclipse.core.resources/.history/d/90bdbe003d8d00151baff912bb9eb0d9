@@ -117,7 +117,7 @@ public class mainTest {
 		   ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 		   game g = new game();
 		   g.menuInput(in);
-		  
+		   g.ListSize();
 		   assertEquals(g.ListSize(), 5);
 	   }
 	   

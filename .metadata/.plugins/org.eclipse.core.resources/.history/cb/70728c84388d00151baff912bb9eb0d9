@@ -112,15 +112,6 @@ public class mainTest {
 	        
 	    }
 	   
-	   @Test
-	   public void test_ThrowDiceMenu(){
-		   ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-		   game g = new game();
-		   g.menuInput(in);
-		  
-		   assertEquals(g.ListSize(), 5);
-	   }
-	   
 	   
 	//Test returning a specific dice that should be rethrown
 }
