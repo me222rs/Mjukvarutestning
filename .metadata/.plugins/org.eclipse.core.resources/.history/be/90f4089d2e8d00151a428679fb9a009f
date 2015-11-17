@@ -84,7 +84,6 @@ public class game {
 		}
 	}
 	
-	//Method written by Mikael
 	public void PrintResult(int num){
 		if(diceList.size() != num)
 		{
