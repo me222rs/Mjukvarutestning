@@ -119,7 +119,7 @@ public class game {
 	    }
 	    else{
 		    for (int i=0; i < ints.length; i++) {
-		        diceList.remove(ints[i] - 1);
+		        diceList.remove(ints[i] - 1-5);
 		    }
 	    }
 		
