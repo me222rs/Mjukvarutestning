@@ -90,10 +90,9 @@ public class game {
 			System.out.print(diceList.get(i).GetValue() + " ");
 		}
 	}
-	//Code by Emil & Mikael
+	
 	public void ShowRethrowMenu(String dicesToRethrow){
 		
-		//New simpler regex then we used before
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}
@@ -126,7 +125,6 @@ public class game {
 		
 	}
 	
-	//Code by Emil & Mikael
 	public void showMenu(int choice){
  	 
         switch(choice)
