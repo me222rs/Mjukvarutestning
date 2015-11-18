@@ -1,7 +1,9 @@
 package tests;
 import static org.mockito.Mockito.*;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -20,6 +22,7 @@ public class mainTest {
 	//private field with minumum and maximun values allowed
 	private static final int min = 1;
 	private static final int max = 6;
+	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	
 	@Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
@@ -82,10 +85,11 @@ public class mainTest {
 
 	   //Testing the dice console output of the PrintResult() method
 	   //Test written by Mikael
-	  // @Test
+	  @Test
 	   public void test_resultOutput() {
 	       game g = new game();
 	       Dice d = new Dice();
+	       
 	       d.ThrowDie(min, max);
 	       d.SetValue(1);
 	       g.diceList.clear();
@@ -94,11 +98,12 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       g.diceList.add(d);
-	       
+	       System.setOut(new PrintStream(outContent));
 	       g.PrintResult(5);
-	       assertEquals("1 1 1 1 1 ", g.outContent.toString());
+	       
+	       assertEquals("1 1 1 1 1 ", outContent.toString());
 	       //Resets the outContent so that nothing will go wrong next time it is used
-	       g.outContent.reset();
+	       //g.outContent.reset();
 	       
 	   }
 	   
@@ -114,12 +119,39 @@ public class mainTest {
 	   
 	   @Test
 	   public void test_ThrowDiceMenu(){
-		   ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+		   
 		   game g = new game();
-		   g.menuInput(in);
+		   g.ThrowDices(5);
+		   g.PrintResult(5);
 		  
 		   assertEquals(g.ListSize(), 5);
 	   }
+	   
+	   @Test
+	   public void ShowRethrowMenu(){
+		   
+		   game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.ShowRethrowMenu("3"); 
+		   assertEquals(g.ListSize(), 4);
+	   }
+	   
+	   
+//	   @Test
+//	   public void test_mock(){
+//	        game g = mock(game.class);
+//	        //g.ThrowDices(5);
+//	        g.run();
+//	        verify(g, times(1)).ThrowDices(5);;
+//	   }
 	   
 	   
 	//Test returning a specific dice that should be rethrown

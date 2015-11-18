@@ -1,0 +1,212 @@
+package Yatzy;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+public class game {
+	//static fields
+	public final int min = 1;
+	public final int max = 6;
+	public final int fiveDices = 5;
+	public List<Dice> diceList = new ArrayList<Dice>();
+	public int choice;
+	public String choiceAsString;
+	
+	//start method
+	public static void main(String[] args){
+		game g = new game();
+		g.run();
+		
+	}
+	
+	public Dice GetDiceByNumber(int num){
+		return diceList.get(num);
+		
+	}
+	
+	public int ListSize()
+	{
+		return diceList.size();
+	}
+	//run method for the game
+	public void run(){
+		int input;
+		
+		System.out.println("----Menu----");
+		System.out.println("1 - Play");
+		System.out.println("2 - Results");
+
+		Scanner scanner = new Scanner(System.in);
+     	input = scanner.nextInt();
+     	
+     	StringBuilder sb = new StringBuilder();
+     	sb.append("");
+     	sb.append(input);
+     	String inputString = sb.toString();
+     	
+     	ByteArrayInputStream in = new ByteArrayInputStream(inputString.getBytes());
+		menuInput(in);
+		//showMenu(Integer.parseInt(in.toString()));
+		//ThrowDices(max_dices);
+		//PrintResult(5);
+	}
+	//refactor code by Emil.
+	//Method that throws a specified amount of dices
+	public void ThrowDices(int numberOfDices){
+		if(numberOfDices > fiveDices ){
+			throw new IndexOutOfBoundsException("Error! Can't be more than 5 dices.");
+		}
+		//Code and test by Emil.
+		else if(numberOfDices < fiveDices){
+			throw new IndexOutOfBoundsException("Error! Can't be less than 5 dices.");
+		}
+		else{
+			for(int i=0;i<numberOfDices;i++){
+				Dice dice = new Dice();
+				dice.ThrowDie(min,max);
+				diceList.add(dice);
+			}
+		}
+	}
+	
+	//Method written by Mikael
+	public void PrintResult(int num){
+		if(diceList.size() != num)
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		
+		for(int i=0;i<diceList.size();i++){
+			
+			System.out.print(diceList.get(i).GetValue() + " ");
+			
+		}
+		
+		
+	}
+	
+	public void ShowRethrowMenu(String dicesToRethrow){
+		
+		//str = "Hello I'm your String";
+		String[] splitted = dicesToRethrow.split("\\s+");
+		
+	    int[] ints = new int[splitted.length];
+	    for (int i=0; i < splitted.length; i++) {
+	        ints[i] = Integer.parseInt(splitted[i]);
+	    }
+	    
+	    for (int i=0; i < ints.length; i++) {
+	        diceList.remove(ints[i] - 1);
+	    }
+	    
+	    System.out.print(diceList.size());
+		
+		
+		
+		
+		
+//        switch(choice)
+//        {	
+//	        case 1:
+//	        {
+//	        	System.out.print("Which dices would you like to rethrow?");
+//	        	
+//	        }
+//        }
+	}
+	
+	public void showMenu(int choice){
+		//Switch statement
+		
+//		Scanner scanner = new Scanner(System.in);
+//     	input = scanner.nextInt();
+//     	
+//     	StringBuilder sb = new StringBuilder();
+//     	sb.append("");
+//     	sb.append(input);
+//     	String inputString = sb.toString();
+//     	
+//     	ByteArrayInputStream in = new ByteArrayInputStream(inputString.getBytes());
+//       	 
+        switch(choice)
+        {	
+        	case 1:
+        	{
+        		ThrowDices(fiveDices);
+        		PrintResult(fiveDices);
+        		
+        		System.out.println("\nWhich dices do you want to rethrow?");
+        		Scanner sc = new Scanner(System.in);
+        		String dicesToRethrow = sc.nextLine();
+
+        		ShowRethrowMenu(dicesToRethrow);
+        		break;
+        	}
+        	
+        	
+        	default:
+        	{
+        		break;
+        	}
+        	
+        	
+        }
+       
+        
+       
+	}
+	
+	public void doExit()
+	{
+		System.exit(0);
+	}
+	
+	//Code Mikael, Refector Emil & Mikael
+	public void menuInput(InputStream in){
+		//Read menu input
+
+		choice = 0;
+		choiceAsString = "";
+		
+		//BufferedReader is used so that we can test the menu input
+		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
+			choiceAsString = reader.readLine();
+			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
+				throw new InputMismatchException("Error! Only integers allowed.");
+			}
+		    choice = Integer.parseInt(choiceAsString);
+		    
+		    if(choice > 3 || choice < 1 )
+		    {
+		    	throw new IndexOutOfBoundsException("Error! Not in range.");
+		    }
+		    
+		    
+		} catch (UnsupportedEncodingException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		if(choice == 3)
+		{
+			doExit();
+		}
+		else
+		{
+			showMenu(choice);
+		}
+	}
+}

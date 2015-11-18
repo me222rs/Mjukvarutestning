@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +21,6 @@ public class game {
 	public final int max = 6;
 	public final int fiveDices = 5;
 	public List<Dice> diceList = new ArrayList<Dice>();
-	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	public int choice;
 	public String choiceAsString;
 	
@@ -31,7 +32,6 @@ public class game {
 	}
 	
 	public Dice GetDiceByNumber(int num){
-		
 		return diceList.get(num);
 		
 	}
@@ -87,20 +87,24 @@ public class game {
 		{
 			throw new IndexOutOfBoundsException();
 		}
-		//System.setOut(new PrintStream(outContent));
+		
 		for(int i=0;i<diceList.size();i++){
 			
 			System.out.print(diceList.get(i).GetValue() + " ");
 			
 		}
 		
+		
+	}
+	
+	public void ShowRethrowMenu(String dicesToRethrow){
+		
+
+		
 	}
 	
 	public void showMenu(int choice){
-		//Switch statement
-		
-		
-       	 
+ 	 
         switch(choice)
         {	
         	case 1:
@@ -108,6 +112,11 @@ public class game {
         		ThrowDices(fiveDices);
         		PrintResult(fiveDices);
         		
+        		System.out.println("\nWhich dices do you want to rethrow?");
+        		Scanner sc = new Scanner(System.in);
+        		String dicesToRethrow = sc.nextLine();
+
+        		ShowRethrowMenu(dicesToRethrow);
         		break;
         	}
         	
