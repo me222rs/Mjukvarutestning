@@ -128,7 +128,7 @@ public class mainTest {
 	   }
 	   
 	   @Test
-	   public void Test_RemoveDieFromList_ToBeRethrown(){
+	   public void ShowRethrowMenu(){
 		   
 		   game g = new game();
 	       Dice d = new Dice();
@@ -143,8 +143,6 @@ public class mainTest {
 	       g.ShowRethrowMenu("3"); 
 		   assertEquals(g.ListSize(), 4);
 	   }
-	   
-	   //Test code below - Ignore it!
 	   
 	   
 //	   @Test
