@@ -148,16 +148,10 @@ public class mainTest {
 	   public void Test_RemoveDieFromList_ToBeRethrown_MultipleDices(){
 		   
 		   game g = new game();
-	       Dice d = new Dice();
-	       d.ThrowDie(min, max);
-
-	       g.diceList.add(d);
-	       g.diceList.add(d);
-	       g.diceList.add(d);
-	       g.diceList.add(d);
-	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("h"); 
+	       
+	       
+	       g.ShowRethrowMenu("1"); 
 		   //assertEquals(g.ListSize(), 2);
 	   }
 	   

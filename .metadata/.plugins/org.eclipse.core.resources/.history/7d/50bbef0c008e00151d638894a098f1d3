@@ -157,7 +157,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("h"); 
+	       g.ShowRethrowMenu("1"); 
 		   //assertEquals(g.ListSize(), 2);
 	   }
 	   

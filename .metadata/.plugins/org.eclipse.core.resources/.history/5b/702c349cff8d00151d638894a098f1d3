@@ -93,10 +93,6 @@ public class game {
 	
 	public void ShowRethrowMenu(String dicesToRethrow){
 		
-		if(dicesToRethrow.matches("-?\\d+(\\.\\d+)?")){
-			throw new NumberFormatException();
-		}
-		
 		String[] splitted = dicesToRethrow.split("\\s+");
 		
 	    int[] ints = new int[splitted.length];
