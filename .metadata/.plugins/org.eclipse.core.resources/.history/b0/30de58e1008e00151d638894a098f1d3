@@ -157,8 +157,8 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3 4 5"); 
-		   assertEquals(g.ListSize(), 2);
+	       g.ShowRethrowMenu("3"); 
+		   assertEquals(g.ListSize(), 4);
 	   }
 	   
 	   @Test(expected=NumberFormatException.class)
