@@ -149,7 +149,7 @@ public class mainTest {
 		   
 		   game g = new game();
 
-	       g.ShowRethrowMenu("h"); 
+	       g.ShowRethrowMenu("1"); 
 	   }
 	   
 	   //Test code below - Ignore it!
