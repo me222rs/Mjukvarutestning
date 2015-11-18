@@ -99,39 +99,7 @@ public class game {
 	
 	public void ShowRethrowMenu(String dicesToRethrow){
 		
-		//str = "Hello I'm your String";
-		String[] splitted = dicesToRethrow.split("\\s+");
-		
-	    int[] ints = new int[splitted.length];
-	    for (int i=0; i < splitted.length; i++) {
-	        ints[i] = Integer.parseInt(splitted[i]);
-	    }
-	    //int[] temp = ints.clone();
-	    //Arrays.sort(temp);
-	    
-	    
-	    int temp;
-	    for( int i = 0; i < ints.length/2; ++i ) 
-	    { 
-	      temp = ints[i]; 
-	      ints[i] = ints[ints.length - i - 1]; 
-	      ints[ints.length - i - 1] = temp; 
-	    }
-	    
-	    
-	    for(int i=0; i<ints.length; i++){
-	    	   System.out.println(ints[i]);
-	    }
-	    
-	    if(ints[0] == 0){
-	    	//Check the value of the dices and calculate points
-	    	System.out.print("Fel");
-	    }
-	    else{
-		    for (int i=0; i < ints.length; i++) {
-		        diceList.remove(ints[i] - 1);
-		    }
-	    }
+
 		
 	}
 	
