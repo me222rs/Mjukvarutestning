@@ -93,7 +93,7 @@ public class game {
 	
 	public void ShowRethrowMenu(String dicesToRethrow){
 		
-		if(!dicesToRethrow.matches("[0-9 ]+")){
+		if(!dicesToRethrow.matches("-?\\d+(\\.\\d+)?")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}
 		
