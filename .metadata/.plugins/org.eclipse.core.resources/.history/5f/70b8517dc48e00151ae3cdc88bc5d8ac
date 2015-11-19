@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -101,7 +100,7 @@ public class game {
 		
 		String[] splitted = dicesToRethrow.split("\\s+");
 		
-	    Integer[] ints = new Integer[splitted.length];
+	    int[] ints = new int[splitted.length];
 	    for (int i=0; i < splitted.length; i++) {
 	        ints[i] = Integer.parseInt(splitted[i]);
 	    }
@@ -114,7 +113,7 @@ public class game {
 	      ints[ints.length - i - 1] = temp; 
 	    }
 	    
-	  Arrays.sort(ints, Collections.reverseOrder());
+	  
 	    if(ints[0] == 0){
 	    	//Check the value of the dices and calculate points
 	    	System.out.print("Fel");

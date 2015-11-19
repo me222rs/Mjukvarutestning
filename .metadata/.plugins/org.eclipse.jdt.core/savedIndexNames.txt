@@ -18,6 +18,5 @@ INDEX VERSION 1.127+C:\Users\Emil\Documents\GitHub\Mjukvarutestning\.metadata\.p
 1094395942.index
 1711765710.index
 1198290418.index
-1167190064.index
 1063367808.index
 908747706.index
