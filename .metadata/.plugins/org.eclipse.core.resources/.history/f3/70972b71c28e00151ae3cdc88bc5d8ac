@@ -183,7 +183,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3 5 1 2 4"); 
+	       g.ShowRethrowMenu("1 2 3 4 5"); 
 		   assertEquals(g.ListSize(), 0);
 	   }
 	   
