@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -58,10 +59,8 @@ public class game {
      	
      	ByteArrayInputStream in = new ByteArrayInputStream(inputString.getBytes());
 		menuInput(in);
-		//showMenu(Integer.parseInt(in.toString()));
-		//ThrowDices(max_dices);
-		//PrintResult(5);
 	}
+	
 	//refactor code by Emil.
 	//Method that throws a specified amount of dices
 	public void ThrowDices(int numberOfDices){
@@ -88,40 +87,31 @@ public class game {
 			throw new IndexOutOfBoundsException();
 		}
 		
-		for(int i=0;i<diceList.size();i++){
-			
+		for(int i=0;i<diceList.size();i++){	
 			System.out.print(diceList.get(i).GetValue() + " ");
-			
 		}
-		
-		
 	}
-	
+	//Code by Emil & Mikael
 	public void ShowRethrowMenu(String dicesToRethrow){
 		
-		//str = "Hello I'm your String";
+		//New simpler regex then we used before
+		if(!dicesToRethrow.matches("[0-9 ]+")){
+			throw new NumberFormatException("Only numbers allowed!");
+		}
+		
+		if(!dicesToRethrow.matches("[1-5 ]+"))
+		{
+			throw new IllegalArgumentException();
+		}
+		
 		String[] splitted = dicesToRethrow.split("\\s+");
 		
-	    int[] ints = new int[splitted.length];
+	    Integer[] ints = new Integer[splitted.length];
 	    for (int i=0; i < splitted.length; i++) {
 	        ints[i] = Integer.parseInt(splitted[i]);
 	    }
-	    //int[] temp = ints.clone();
-	    //Arrays.sort(temp);
 	    
-	    
-	    int temp;
-	    for( int i = 0; i < ints.length/2; ++i ) 
-	    { 
-	      temp = ints[i]; 
-	      ints[i] = ints[ints.length - i - 1]; 
-	      ints[ints.length - i - 1] = temp; 
-	    }
-	    
-	    
-	    for(int i=0; i<ints.length; i++){
-	    	   System.out.println(ints[i]);
-	    }
+	    Arrays.sort(ints, Collections.reverseOrder());
 	    
 	    if(ints[0] == 0){
 	    	//Check the value of the dices and calculate points
@@ -135,6 +125,7 @@ public class game {
 		
 	}
 	
+	//Code by Emil & Mikael
 	public void showMenu(int choice){
  	 
         switch(choice)

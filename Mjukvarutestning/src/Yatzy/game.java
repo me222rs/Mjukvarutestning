@@ -101,7 +101,7 @@ public class game {
 		
 		if(!dicesToRethrow.matches("[1-5 ]+"))
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error not in Range of 1-5 input.");
 		}
 		
 		String[] splitted = dicesToRethrow.split("\\s+");

@@ -205,7 +205,7 @@ public class mainTest {
 	   }
 	   
 	   @Test(expected=IllegalArgumentException.class)
-	   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOf(){
+	   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneNegativeNumber(){
 		   
 		   game g = new game();
 	       Dice d = new Dice();

@@ -144,6 +144,83 @@ public class mainTest {
 		   assertEquals(g.ListSize(), 4);
 	   }
 	   
+	   @Test
+	   public void Test_RemoveDieFromList_ToBeRethrown_MultipleDices(){
+		   
+		   game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.ShowRethrowMenu("3 4 5"); 
+		   assertEquals(g.ListSize(), 2);
+	   }
+	   
+	   @Test(expected=NumberFormatException.class)
+	   public void Test_RemoveDices_WrongDatatypeInput(){
+		   
+		   game g = new game();
+
+	       g.ShowRethrowMenu("h"); 
+	   }
+	   
+	   
+	   @Test
+	   public void Test_RemoveDieFromList_ToBeRethrown_AllDices(){
+		   
+		   game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.ShowRethrowMenu("3 5 1 2 4"); 
+		   assertEquals(g.ListSize(), 0);
+	   }
+	   
+	   @Test(expected=IllegalArgumentException.class)
+	   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOfRange(){
+		   
+		   game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.ShowRethrowMenu("3 7 1 2 4"); 
+		  
+	   }
+	   
+	   @Test(expected=IllegalArgumentException.class)
+	   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOf(){
+		   
+		   game g = new game();
+	       Dice d = new Dice();
+	       d.ThrowDie(min, max);
+
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       g.diceList.add(d);
+	       
+	       g.ShowRethrowMenu("-1 3 1 2 4"); 
+		  
+	   }
+	   
 	   //Test code below - Ignore it!
 	   
 	   
