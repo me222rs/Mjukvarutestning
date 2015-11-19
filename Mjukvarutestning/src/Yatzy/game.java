@@ -101,7 +101,7 @@ public class game {
 		
 		if(!dicesToRethrow.matches("[1-5 ]+"))
 		{
-			throw new IllegalArgumentException();
+			
 		}
 		
 		String[] splitted = dicesToRethrow.split("\\s+");
