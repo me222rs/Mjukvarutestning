@@ -187,7 +187,7 @@ public class mainTest {
 		   assertEquals(g.ListSize(), 0);
 	   }
 	   
-	   @Test(expected=IllegalArgumentException.class)
+	   @Test
 	   public void Test_RemoveDieFromList_ToBeRethrown_All(){
 		   
 		   game g = new game();
@@ -201,7 +201,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       
 	       g.ShowRethrowMenu("3 7 1 2 4"); 
-		  
+		   assertEquals(g.ListSize(), 0);
 	   }
 	   
 	   //Test code below - Ignore it!

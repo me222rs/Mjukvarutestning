@@ -99,11 +99,6 @@ public class game {
 			throw new NumberFormatException("Only numbers allowed!");
 		}
 		
-		if(!dicesToRethrow.matches("[1-5 ]+"))
-		{
-			throw new IllegalArgumentException();
-		}
-		
 		String[] splitted = dicesToRethrow.split("\\s+");
 		
 	    Integer[] ints = new Integer[splitted.length];

@@ -201,7 +201,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       
 	       g.ShowRethrowMenu("3 7 1 2 4"); 
-		  
+		   assertEquals(g.ListSize(), 0);
 	   }
 	   
 	   //Test code below - Ignore it!
