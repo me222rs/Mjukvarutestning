@@ -106,8 +106,15 @@ public class game {
 	        ints[i] = Integer.parseInt(splitted[i]);
 	    }
 	    
-	    Arrays.sort(ints, Collections.reverseOrder());
+	    int temp;
+	    for( int i = 0; i < ints.length/2; ++i ) 
+	    { 
+	      temp = ints[i]; 
+	      ints[i] = ints[ints.length - i - 1]; 
+	      ints[ints.length - i - 1] = temp; 
+	    }
 	    
+	  Arrays.sort(ints, Collections.reverseOrder());
 	    if(ints[0] == 0){
 	    	//Check the value of the dices and calculate points
 	    	System.out.print("Fel");
