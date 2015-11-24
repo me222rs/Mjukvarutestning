@@ -7,8 +7,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -28,7 +26,7 @@ public class MVCtest {
 	Model model;
 	View view;
 	Controller controller;
-	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
 	@Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 		
@@ -109,40 +107,4 @@ public class MVCtest {
 		    this.controller = new Controller(this.model, this.view);
 		    this.controller.SwitchChoice(choice);
 	    }
-	   	
-	   	@Test
-		   public void test_resultOutput() {
-		   	   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "1 2 3 4 5";
-			   
-		       Dice d1 = mock(Dice.class);
-			   when(d1.GetValue()).thenReturn(1);
-			   
-			   Dice d2 = mock(Dice.class);
-			   when(d2.GetValue()).thenReturn(2);
-			   
-			   Dice d3 = mock(Dice.class);
-			   when(d3.GetValue()).thenReturn(3);
-			   
-			   Dice d4 = mock(Dice.class);
-			   when(d4.GetValue()).thenReturn(4);
-			   
-			   Dice d5 = mock(Dice.class);
-			   when(d5.GetValue()).thenReturn(5);
-		       
-			   diceList.add(d1);
-		       diceList.add(d2);
-		       diceList.add(d3);
-		       diceList.add(d4);
-		       diceList.add(d5);
-		       
-		       this.view = new View();
-		       System.setOut(new PrintStream(outContent));
-		       this.view.PrintResult(diceList);
-		       
-		       assertEquals(expected, outContent.toString());
-		       //Resets the outContent so that nothing will go wrong next time it is used
-		       //g.outContent.reset();
-		       
-		   }
 }

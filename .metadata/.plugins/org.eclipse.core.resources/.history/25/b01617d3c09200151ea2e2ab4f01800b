@@ -112,9 +112,9 @@ public class MVCtest {
 	   	
 	   	@Test
 		   public void test_resultOutput() {
-		   	   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "1 2 3 4 5";
-			   
+		       game g = new game();
+		       Dice d = new Dice();
+		       
 		       Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(1);
 			   
@@ -130,17 +130,18 @@ public class MVCtest {
 			   Dice d5 = mock(Dice.class);
 			   when(d5.GetValue()).thenReturn(5);
 		       
-			   diceList.add(d1);
-		       diceList.add(d2);
-		       diceList.add(d3);
-		       diceList.add(d4);
-		       diceList.add(d5);
 		       
-		       this.view = new View();
+		      
+		      
+		       g.diceList.add(d);
+		       g.diceList.add(d);
+		       g.diceList.add(d);
+		       g.diceList.add(d);
+		       g.diceList.add(d);
 		       System.setOut(new PrintStream(outContent));
-		       this.view.PrintResult(diceList);
+		       g.PrintResult(5);
 		       
-		       assertEquals(expected, outContent.toString());
+		       assertEquals("1 1 1 1 1 ", outContent.toString());
 		       //Resets the outContent so that nothing will go wrong next time it is used
 		       //g.outContent.reset();
 		       

@@ -113,7 +113,7 @@ public class MVCtest {
 	   	@Test
 		   public void test_resultOutput() {
 		   	   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "1 2 3 4 5";
+			   String expected = "12345";
 			   
 		       Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(1);
@@ -136,7 +136,7 @@ public class MVCtest {
 		       diceList.add(d4);
 		       diceList.add(d5);
 		       
-		       this.view = new View();
+		       
 		       System.setOut(new PrintStream(outContent));
 		       this.view.PrintResult(diceList);
 		       
