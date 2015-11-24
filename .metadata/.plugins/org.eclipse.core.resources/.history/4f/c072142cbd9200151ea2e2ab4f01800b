@@ -96,11 +96,13 @@ public class MVCtest {
 	       verify(d5, times(1)).GetValue();
 	   }
 	   
-	   	@Test
+	   @Test
 	    public void Test_systemExit() {
 		    exit.expectSystemExitWithStatus(0);
 			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
-		    this.view = new View();
-		    this.view.MenuChoice(in);   
+			   this.view = new View();
+			   this.view.MenuChoice(in);
+	       
+	        
 	    }
 }

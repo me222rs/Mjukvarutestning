@@ -101,6 +101,8 @@ public class MVCtest {
 		    exit.expectSystemExitWithStatus(0);
 			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
 		    this.view = new View();
-		    this.view.MenuChoice(in);   
+		    this.view.MenuChoice(in);
+	       
+	        
 	    }
 }
