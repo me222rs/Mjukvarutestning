@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="Yatzy.game"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="Yatzy.Dice"/>
 <fullyQualifiedTypeName name="org.mockito.Mock"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
@@ -20,7 +17,15 @@
 <fullyQualifiedTypeName name="org.junit.contrib.java.lang.system.ExpectedSystemExit"/>
 <fullyQualifiedTypeName name="org.junit.contrib.java.lang.system.SystemOutRule"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="Yatzy.Points"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="Yatzy.game"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="Yatzy.Model"/>
+<fullyQualifiedTypeName name="Yatzy.View"/>
+<fullyQualifiedTypeName name="Yatzy.Controller"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

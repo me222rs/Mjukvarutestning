@@ -67,7 +67,7 @@ public class Controller {
 		}
 	}
 	
-	public int GetListSize()
+	public int getList()
 	{
 		return diceList.size();
 	}

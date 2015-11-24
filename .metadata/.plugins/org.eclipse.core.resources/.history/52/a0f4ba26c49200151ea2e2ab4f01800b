@@ -110,51 +110,50 @@ public class MVCtest {
 		    this.controller.SwitchChoice(choice);
 	    }
 	   	
-	   //Test by Emil & Mikael
-	   @Test
-	   public void test_ThrowAllDicesResultOutput() {
-	   	   List<Dice>diceList = new ArrayList<Dice>();
-		   String expected = "1 2 3 4 5";
-		   
-	       Dice d1 = mock(Dice.class);
-		   when(d1.GetValue()).thenReturn(1);
-		   
-		   Dice d2 = mock(Dice.class);
-		   when(d2.GetValue()).thenReturn(2);
-		   
-		   Dice d3 = mock(Dice.class);
-		   when(d3.GetValue()).thenReturn(3);
-		   
-		   Dice d4 = mock(Dice.class);
-		   when(d4.GetValue()).thenReturn(4);
-		   
-		   Dice d5 = mock(Dice.class);
-		   when(d5.GetValue()).thenReturn(5);
-	       
-		   diceList.add(d1);
-	       diceList.add(d2);
-	       diceList.add(d3);
-	       diceList.add(d4);
-	       diceList.add(d5);
-	       
-	       this.view = new View();
-	       System.setOut(new PrintStream(outContent));
-	       this.view.PrintResult(diceList);
-	       
-	       assertEquals(expected, outContent.toString());		       
-	   }
+	   	@Test
+		   public void test_ThrowAllDicesResultOutput() {
+		   	   List<Dice>diceList = new ArrayList<Dice>();
+			   String expected = "1 2 3 4 5";
+			   
+		       Dice d1 = mock(Dice.class);
+			   when(d1.GetValue()).thenReturn(1);
+			   
+			   Dice d2 = mock(Dice.class);
+			   when(d2.GetValue()).thenReturn(2);
+			   
+			   Dice d3 = mock(Dice.class);
+			   when(d3.GetValue()).thenReturn(3);
+			   
+			   Dice d4 = mock(Dice.class);
+			   when(d4.GetValue()).thenReturn(4);
+			   
+			   Dice d5 = mock(Dice.class);
+			   when(d5.GetValue()).thenReturn(5);
+		       
+			   diceList.add(d1);
+		       diceList.add(d2);
+		       diceList.add(d3);
+		       diceList.add(d4);
+		       diceList.add(d5);
+		       
+		       this.view = new View();
+		       System.setOut(new PrintStream(outContent));
+		       this.view.PrintResult(diceList);
+		       
+		       assertEquals(expected, outContent.toString());		       
+		   }
 	   	
-	   	   //Test by Emil & Mikael
 	   	   @Test
 		   public void test_CheckDiceListSize(){
 		   		int expected = 5;
+		   		Controller c = new Controller(model,view);
 		   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			    this.view = new View();
 			    int choice = this.view.MenuChoice(in);
 			    this.controller = new Controller(this.model, this.view);
 			    this.controller.SwitchChoice(choice);
 				   
-				int result = controller.GetListSize();
+				int result = controller.getList();
 				assertEquals(expected, result);
 		   }
 	   	
