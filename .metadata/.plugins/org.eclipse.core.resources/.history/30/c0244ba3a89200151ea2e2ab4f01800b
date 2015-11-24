@@ -13,8 +13,7 @@ import Yatzy.game;
 public class MVCtest {
 	Model model;
 	View view;
-		
-		//Test by Emil & Mikael
+	
 	   @Test(expected=InputMismatchException.class)
 	   public void test_MenuChoiceExceptionTest_NotInteger(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("t".getBytes());
@@ -22,7 +21,6 @@ public class MVCtest {
 		   this.view.MenuChoice(in);
 	   }
 	   
-	   //Test by Emil & Mikael
 	   @Test(expected=IndexOutOfBoundsException.class)
 	   public void test_MenuChoiceExceptionTest_NotInRange_TooLow(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("0".getBytes());
@@ -30,7 +28,6 @@ public class MVCtest {
 		   this.view.MenuChoice(in);
 	   }
 	   
-	   //Test by Emil & Mikael
 	   @Test(expected=IndexOutOfBoundsException.class)
 	   public void test_MenuChoiceExceptionTest_NotInRange_TooHigh(){
 		   ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
