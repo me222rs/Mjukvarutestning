@@ -46,7 +46,7 @@ public class View {
 		    
 		    if(choice < 1 )
 		    {
-		    	throw new IndexOutOfBoundsException("Error! Input to low.");
+		    	throw new IndexOutOfBoundsException("Error! Not in range.");
 		    }
 		     
 		} catch (UnsupportedEncodingException e) {
