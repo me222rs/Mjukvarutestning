@@ -142,20 +142,4 @@ public class MVCtest {
 		       
 		       assertEquals(expected, outContent.toString());		       
 		   }
-	   	
-	   	   @Test
-		   public void test_CheckDiceListSize(){
-		   		int expected = 5;
-		   		Controller c = new Controller(model,view);
-		   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-			    this.view = new View();
-			    int choice = this.view.MenuChoice(in);
-			    this.controller = new Controller(this.model, this.view);
-			    this.controller.SwitchChoice(choice);
-				   
-				int result = controller.getList();
-				assertEquals(expected, result);
-		   }
-	   	
-
 }

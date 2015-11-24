@@ -67,9 +67,9 @@ public class Controller {
 		}
 	}
 	
-	public int getList()
+	public List<Dice> getList()
 	{
-		return 0;
+		return null;
 	}
 	
 	

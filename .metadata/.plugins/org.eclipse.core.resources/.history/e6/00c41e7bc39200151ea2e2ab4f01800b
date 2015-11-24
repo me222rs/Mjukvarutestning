@@ -4,8 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
-
 public class Controller {
 	public Model model;
 	public View view;
@@ -66,11 +64,4 @@ public class Controller {
 			}
 		}
 	}
-	
-	public int getList()
-	{
-		return 0;
-	}
-	
-	
 }

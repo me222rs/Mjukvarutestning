@@ -69,7 +69,7 @@ public class Controller {
 	
 	public int getList()
 	{
-		return 0;
+		return null;
 	}
 	
 	
