@@ -82,6 +82,7 @@ public class MVCtest {
 			   result += diceList.get(i).GetValue();
 		   }
 		   
+	    
 	       assertEquals(result, expected);
 	      
 	       verify(d1, times(1)).GetValue();
