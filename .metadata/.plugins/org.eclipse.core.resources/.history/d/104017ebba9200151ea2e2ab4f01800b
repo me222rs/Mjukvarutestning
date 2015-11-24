@@ -23,31 +23,14 @@ public class Controller {
 		view.GetStartMenu();
 		ByteArrayInputStream input = view.InputStartMenu();
 		int choice = view.MenuChoice(input);
-		SwitchChoice(choice);
 	}
 	
 	public List<Dice> ThrowAllDice(List<Dice> diceList){
-		this.diceList = diceList;
-		if(diceList.isEmpty()){
-			for(int i = 0; i < 5;i++){
-				Dice dice = new Dice();
-				dice.ThrowDie(1,6);
-				diceList.add(dice);
-			}
-		}
-		return diceList;
+		return null;
 	}
 	
 	public void SwitchChoice(int choice){
-		List<Dice >diceList = new ArrayList<Dice>();
-		switch(choice){
-			case 1:
-				diceList = ThrowAllDice(diceList);
-				view.PrintResult(diceList);	
-				
-			case 2:
-			case 3:
-			default:
-		}
+		
 	}
+
 }
