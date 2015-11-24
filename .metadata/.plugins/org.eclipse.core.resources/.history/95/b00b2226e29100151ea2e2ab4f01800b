@@ -1,0 +1,34 @@
+package Yatzy;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Points {
+	public List<Dice> diceList;
+	
+	public Points(game g){
+		diceList =  new ArrayList<Dice>();
+	}
+	
+	public String GetResult(List<Dice> list){
+		diceList = list;
+		String ret = "fjant";
+		for(int i=0; i<diceList.size();i++){
+			if(Collections.frequency(diceList, diceList.get(i)) > 1){
+				ret = "prutt";
+			}
+		}
+
+		return ret;
+	}
+	
+	public String testMethod(String str){
+		if(str == "1"){
+			return "inif";
+		}
+		else{
+			return "outif";
+		}
+	}
+}

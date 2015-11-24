@@ -1,0 +1,17 @@
+package Yatzy;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Points {
+	public List<Dice> diceList;
+	
+	public Points(){
+		diceList =  new ArrayList<Dice>();
+	}
+	
+	public int Getpoints(int test){
+		System.out.print("GetPoints");
+		return 1234;
+	}
+}

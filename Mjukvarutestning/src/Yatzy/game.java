@@ -1,5 +1,6 @@
 package Yatzy;
 
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class game {
-	//static fields
+	// fields
 	public final int min = 1;
 	public final int max = 6;
 	public final int fiveDices = 5;
@@ -28,7 +29,10 @@ public class game {
 	//start method
 	public static void main(String[] args){
 		game g = new game();
-		g.run();
+		//g.run();
+		Model m = null;
+		View v = null;
+		Controller c = new Controller(m,v);
 		
 	}
 	
@@ -92,14 +96,15 @@ public class game {
 		}
 	}
 	//Code by Emil & Mikael
-	public void ShowRethrowMenu(String dicesToRethrow){
+	public String ShowRethrowMenu(String dicesToRethrow, Points points){
 		
+		String msg ="";
 		//New simpler regex then we used before
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}
 		
-		if(!dicesToRethrow.matches("[1-5 ]+"))
+		if(!dicesToRethrow.matches("[0-5 ]+"))
 		{
 			throw new IllegalArgumentException("Error not in Range of 1-5 input.");
 		}
@@ -112,18 +117,28 @@ public class game {
 	    }
 	    
 	    Arrays.sort(ints, Collections.reverseOrder());
-	    
+	    //Points p = new Points(diceList);
 	    if(ints[0] == 0){
 	    	//Check the value of the dices and calculate points
 	    	System.out.print("Fel");
+	    	
+	    	//Points p = new Points(this);
+	    	//doStuff(p, "0");
+	    	points = new Points(this);
+	    	msg = points.GetResult(diceList);
 	    }
 	    else{
 		    for (int i=0; i < ints.length; i++) {
 		        diceList.remove(ints[i] - 1);
 		    }
 	    }
+		return msg;
 		
 	}
+	
+//	public String doStuff(Points p, String test){
+//		return p.testMethod(test);
+//	}
 	
 	//Code by Emil & Mikael
 	public void showMenu(int choice){
@@ -139,7 +154,7 @@ public class game {
         		Scanner sc = new Scanner(System.in);
         		String dicesToRethrow = sc.nextLine();
 
-        		ShowRethrowMenu(dicesToRethrow);
+        		ShowRethrowMenu(dicesToRethrow, null);
         		break;
         	}
         	

@@ -1,0 +1,9 @@
+package Yatzy;
+
+public class View {
+	public void GetStartMenu(){
+		System.out.println("----Menu----");
+		System.out.println("1 - Play");
+		System.out.println("2 - Results");
+	}
+}

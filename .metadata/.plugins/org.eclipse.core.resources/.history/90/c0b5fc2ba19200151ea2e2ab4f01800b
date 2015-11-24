@@ -1,0 +1,17 @@
+package Yatzy;
+
+public class Controller {
+	public Model model;
+	public View view;
+	
+	public Controller (Model model, View view){
+		this.model = model;
+		this.view = view;
+		
+		Start();
+	}
+	
+	public void Start(){
+		
+	}
+}

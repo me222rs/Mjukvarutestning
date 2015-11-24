@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 import Yatzy.Dice;
+import Yatzy.Points;
 import Yatzy.game;
 
 
@@ -140,7 +141,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3"); 
+	       g.ShowRethrowMenu("3", null); 
 		   assertEquals(g.ListSize(), 4);
 	   }
 	   
@@ -157,7 +158,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3 4 5"); 
+	       g.ShowRethrowMenu("3 4 5", null); 
 		   assertEquals(g.ListSize(), 2);
 	   }
 	   
@@ -166,7 +167,7 @@ public class mainTest {
 		   
 		   game g = new game();
 
-	       g.ShowRethrowMenu("h"); 
+	       g.ShowRethrowMenu("h", null); 
 	   }
 	   
 	   
@@ -183,7 +184,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3 5 1 2 4"); 
+	       g.ShowRethrowMenu("3 5 1 2 4", null); 
 		   assertEquals(g.ListSize(), 0);
 	   }
 	   
@@ -200,7 +201,7 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("3 7 1 2 4"); 
+	       g.ShowRethrowMenu("3 7 1 2 4", null); 
 		  
 	   }
 	   
@@ -217,20 +218,28 @@ public class mainTest {
 	       g.diceList.add(d);
 	       g.diceList.add(d);
 	       
-	       g.ShowRethrowMenu("-1 3 1 2 4"); 
+	       g.ShowRethrowMenu("-1 3 1 2 4", null); 
 		  
 	   }
 	   
 	   //Test code below - Ignore it!
 	   
 	   
-//	   @Test
-//	   public void test_mock(){
-//	        game g = mock(game.class);
-//	        //g.ThrowDices(5);
-//	        g.run();
-//	        verify(g, times(1)).ThrowDices(5);;
-//	   }
+	   @Test
+	   public void test_mock(){
+	        game g = mock(game.class);
+	        Points p = new Points(g);
+	        
+	        String expected = "inif";
+	        
+	        when(g.ShowRethrowMenu("0", p)).thenReturn("par");
+	        String result = g.ShowRethrowMenu("0", p);
+	        
+	        assertEquals(expected, result);
+	        
+
+	        verify(g, times(1)).ShowRethrowMenu("0",p);
+	   }
 	   
 	   
 	//Test returning a specific dice that should be rethrown
