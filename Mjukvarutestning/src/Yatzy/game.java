@@ -33,7 +33,7 @@ public class game {
 		Model m = null;
 		View v = null;
 		Controller c = new Controller(m,v);
-		
+		c.Start(m,v);
 	}
 	
 	public Dice GetDiceByNumber(int num){

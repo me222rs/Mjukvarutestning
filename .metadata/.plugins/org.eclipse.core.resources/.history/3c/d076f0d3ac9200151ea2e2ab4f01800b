@@ -1,0 +1,41 @@
+package Yatzy;
+
+import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Controller {
+	public Model model;
+	public View view;
+	
+	public Controller (Model model, View view){
+		model = new Model();
+		view = new View();
+		this.model = model;
+		this.view = view;
+		Start(this.model, this.view);
+	}
+	
+	public void Start(Model model, View view){
+		List<Dice> diceList = new ArrayList<Dice>();
+		view.GetStartMenu();
+		ByteArrayInputStream input = view.InputStartMenu();
+		int choice = view.MenuChoice(input);
+		
+		switch(choice){
+			case 1:
+				for(int i = 0; i < 5;i++){
+					Dice dice = new Dice();
+					dice.ThrowDie(1,6);
+					diceList.add(dice);
+				}
+			case 2:
+			case 3:
+			default:
+		}
+	}
+	
+	public void ThrowAllDice(List<Dice> diceList){
+		
+	}
+}

@@ -5,7 +5,9 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class View {
@@ -58,4 +60,18 @@ public class View {
 		return choice;
 		
 	}
+
+	public void PrintResult(List<Dice> diceList) {
+		if(diceList.size() != 5)
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		
+		for(int i=0;i<diceList.size();i++){	
+			System.out.print(diceList.get(i).GetValue() + " ");
+		}
+		
+	}
+		
 }
+
