@@ -27,11 +27,4 @@ public class MVCtest {
 		   this.view = new View();
 		   this.view.MenuChoice(in);
 	   }
-	   
-	   @Test(expected=IndexOutOfBoundsException.class)
-	   public void test_MenuChoiceExceptionTest_NotInRange_TooHigh(){
-		   ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
-		   this.view = new View();
-		   this.view.MenuChoice(in);
-	   }
 }
