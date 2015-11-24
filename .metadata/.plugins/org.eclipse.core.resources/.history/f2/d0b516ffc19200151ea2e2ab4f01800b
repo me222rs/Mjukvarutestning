@@ -111,7 +111,7 @@ public class MVCtest {
 	    }
 	   	
 	   	@Test
-		   public void test_ThrowAllDicesResultOutput() {
+		   public void test_resultOutput() {
 		   	   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "1 2 3 4 5";
 			   
@@ -140,6 +140,9 @@ public class MVCtest {
 		       System.setOut(new PrintStream(outContent));
 		       this.view.PrintResult(diceList);
 		       
-		       assertEquals(expected, outContent.toString());		       
+		       assertEquals(expected, outContent.toString());
+		       //Resets the outContent so that nothing will go wrong next time it is used
+		       //g.outContent.reset();
+		       
 		   }
 }
