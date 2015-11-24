@@ -44,24 +44,13 @@ public class Controller {
 		List<Dice >diceList = new ArrayList<Dice>();
 		switch(choice){
 			case 1:
-			{
 				diceList = ThrowAllDice(diceList);
 				view.PrintResult(diceList);	
-				break;
-			}
+				
 			case 2:
-			{
-				break;
-			}
 			case 3:
-			{
 				System.exit(0);
-				break;
-			}
 			default:
-			{
-				break;
-			}
 		}
 	}
 }

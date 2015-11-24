@@ -100,10 +100,10 @@ public class MVCtest {
 	   	@Test
 	    public void Test_systemExit() {
 		    exit.expectSystemExitWithStatus(0);
-			ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
+			ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
 		    this.view = new View();
 		    int choice = this.view.MenuChoice(in);
-		    this.controller = new Controller(this.model, this.view);
+		    //this.controller = new Controller(this.model, this.view);
 		    this.controller.SwitchChoice(choice);
 	    }
 }
