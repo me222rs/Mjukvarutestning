@@ -43,11 +43,6 @@ public class View {
 			}
 			
 		    choice = Integer.parseInt(choiceAsString);
-		    
-		    if(choice < 1 )
-		    {
-		    	throw new IndexOutOfBoundsException("Error! Not in range.");
-		    }
 		     
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
