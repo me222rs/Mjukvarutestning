@@ -79,14 +79,7 @@ public class Controller {
 			
 			int msg =0;
 			
-			if(!dicesToRethrow.matches("[0-9 ]+")){
-				throw new NumberFormatException("Only numbers allowed!");
-			}
 			
-			if(!dicesToRethrow.matches("[0-5 ]+"))
-			{
-				throw new IllegalArgumentException("Error not in Range of 1-5 input.");
-			}
 			
 			String[] splitted = dicesToRethrow.split("\\s+");
 			
