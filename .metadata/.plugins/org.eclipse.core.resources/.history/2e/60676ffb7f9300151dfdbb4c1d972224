@@ -256,7 +256,7 @@ public class MVCtest {
 			  assertEquals(5, temp.size());
 	   	 }
 	   	@Test (expected = IndexOutOfBoundsException.class)
-	   	public void Test_ThrowDie_highestValue(){
+	   	public void Test_ThrowDie_highestValue() throws Exception{
 	   		Dice d = new Dice();
 	   		d.ThrowDie(1, 7);
 	   	}
