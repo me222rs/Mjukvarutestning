@@ -12,9 +12,7 @@ public class Dice {
 	}
 	
 	public void ThrowDie(int min, int max){
-
 		value = random.nextInt((max - min) + 1) + min;
-		
 	}
 	
 	public int GetValue(){

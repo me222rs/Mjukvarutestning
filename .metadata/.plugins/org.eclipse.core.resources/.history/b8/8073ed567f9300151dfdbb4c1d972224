@@ -12,7 +12,14 @@ public class Dice {
 	}
 	
 	public void ThrowDie(int min, int max){
-
+		if(min != 1 || max != 6){
+			try {
+				throw new Exception();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		value = random.nextInt((max - min) + 1) + min;
 		
 	}

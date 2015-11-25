@@ -12,7 +12,11 @@ public class Dice {
 	}
 	
 	public void ThrowDie(int min, int max){
-
+		if(min != 1 || max != 6){
+			
+				throw new IndexOutOfBoundsException();
+			
+		}
 		value = random.nextInt((max - min) + 1) + min;
 		
 	}

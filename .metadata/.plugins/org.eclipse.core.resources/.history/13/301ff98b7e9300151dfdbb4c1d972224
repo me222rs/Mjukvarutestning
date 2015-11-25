@@ -11,8 +11,10 @@ public class Dice {
 		random = new Random();
 	}
 	
-	public void ThrowDie(int min, int max){
-
+	public void ThrowDie(int min, int max) throws Exception{
+		if(min != 1 || max != 6){
+			throw new Exception("");
+		}
 		value = random.nextInt((max - min) + 1) + min;
 		
 	}
