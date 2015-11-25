@@ -79,7 +79,7 @@ public class Controller {
 			
 			int msg =0;
 			
-			if(!dicesToRethrow.matches("[0-9 ]+")){
+			if(!dicesToRethrow.matches("[0-9]+")){
 				throw new NumberFormatException("Only numbers allowed!");
 			}
 			
