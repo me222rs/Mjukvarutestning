@@ -98,7 +98,7 @@ public class Controller {
 	    }
 	    
 	    Arrays.sort(ints, Collections.reverseOrder());
-	  
+	    
 	    if(ints[0] == 0){
 	    	
 	    	System.out.print("none");
