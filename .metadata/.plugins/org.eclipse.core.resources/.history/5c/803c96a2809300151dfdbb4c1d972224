@@ -13,7 +13,7 @@ public class Dice {
 	
 	public void ThrowDie(int min, int max){
 		if(max != 6 || min != 1){	
-			throw new IndexOutOfBoundsException("Max must be 6 and min must be 1.");	
+			throw new IndexOutOfBoundsException("Max and min values are not correct!");	
 		}
 		value = random.nextInt((max - min) + 1) + min;
 		
