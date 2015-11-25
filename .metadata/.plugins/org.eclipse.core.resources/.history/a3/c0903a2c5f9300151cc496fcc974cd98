@@ -185,7 +185,7 @@ public class MVCtest {
 		   }
 	   	   
 	   	 @Test
-		   public void Test_RemoveDieFromList_3ToBeRethrown(){
+		   public void Test_RemoveDieFromList_MultipleToBeRethrown(){
 			   
 			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 				  view = new View();
