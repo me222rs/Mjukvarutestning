@@ -260,12 +260,6 @@ public class MVCtest {
 	   		Dice d = new Dice();
 	   		d.ThrowDie(1, 7);
 	   	}
-	   	
-	   	@Test (expected = IndexOutOfBoundsException.class)
-	   	public void Test_ThrowDie_minimumValue(){
-	   		Dice d = new Dice();
-	   		d.ThrowDie(0, 6);
-	   	}
 	   	 
 	   	
 
