@@ -280,7 +280,7 @@ public class MVCtest {
    		   String expected = "\nThis is your dices after they were rethrown.\n";
 	       this.view = new View();
 	       System.setOut(new PrintStream(outContent));
-	       this.view.AfterRethrow();
+	       this.view.ShowRethrowMenu();
 	       assertEquals(expected, outContent.toString());	
 	   	}
 	   	

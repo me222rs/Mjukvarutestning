@@ -102,7 +102,7 @@ public class View {
 	}
 	
 	public void AfterRethrow(){
-		System.out.print("\nThis is your dices after they were rethrown.\n");	
+		System.out.println("\nThis is your dices after they were rethrown.");	
 	}
 		
 }
