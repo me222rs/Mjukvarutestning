@@ -221,13 +221,13 @@ public class MVCtest {
 			 
 	   	 }
 	   	 
-	     //Test by Emil & Mikael
 	   	 @Test
 	   	 public void Test_RethrowDice_OneDie_SizeIs5(){
-		   	  List<Dice>diceList = new ArrayList<Dice>();
-		   	  List<Dice> temp = new ArrayList<Dice>();
+	   		List<Dice>diceList = new ArrayList<Dice>();
+	   		List<Dice> temp = new ArrayList<Dice>();
 			  view = new View();
-
+		   	  
+		   	  
 		   	  Dice d1 = mock(Dice.class);
 			  when(d1.GetValue()).thenReturn(1);
 			   
@@ -252,8 +252,11 @@ public class MVCtest {
 			  controller.ThrowAllDice(diceList);
 			  temp = controller.ShowRethrowMenu("1");
 			  diceList = controller.RethrowDice(temp);
-  
+			  
+			  
 			  assertEquals(5, temp.size());
+			  
+			 
 	   	 }
 	   	 
 	   	

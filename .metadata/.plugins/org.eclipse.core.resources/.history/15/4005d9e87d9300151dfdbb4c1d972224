@@ -89,6 +89,7 @@ public class Controller {
 			d.ThrowDie(1, 6);
 			diceList.add(d);
 		}
+		System.out.println(diceList.size());
 		return diceList;
 	}
 	
@@ -99,7 +100,9 @@ public class Controller {
 	
 	//Code by Emil & Mikael
 	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
-
+		
+		
+		
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}

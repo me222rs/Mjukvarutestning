@@ -221,7 +221,6 @@ public class MVCtest {
 			 
 	   	 }
 	   	 
-	     //Test by Emil & Mikael
 	   	 @Test
 	   	 public void Test_RethrowDice_OneDie_SizeIs5(){
 		   	  List<Dice>diceList = new ArrayList<Dice>();
