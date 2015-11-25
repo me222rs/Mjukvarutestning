@@ -172,7 +172,7 @@ public class MVCtest {
 		   }
 	   	   
 	   	   @Test(expected=IllegalArgumentException.class)
-		   public void Test_RemoveDieFromList_ToBeRethrown_OneDie_OneOutOfRange(){
+		   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOfRange(){
 			   
 	   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
