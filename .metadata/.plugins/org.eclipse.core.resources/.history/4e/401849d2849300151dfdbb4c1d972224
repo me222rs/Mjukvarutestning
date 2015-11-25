@@ -267,7 +267,7 @@ public class MVCtest {
 	   		d.ThrowDie(0, 6);
 	   	}
 	   	@Test
-	   	public void Test_ShowRethrowMenu_View_Output(){
+	   	public void Test_ShowRethrowMenu_View(){
    		   String expected = "\nWhich dice would you like to rethrow? Separate dice positions with a space.\n";
 	       this.view = new View();
 	       System.setOut(new PrintStream(outContent));
@@ -276,7 +276,7 @@ public class MVCtest {
 	   	}
 	   	
 	   	@Test
-	   	public void Test_AfterRethrow_View_Output(){
+	   	public void Test_AfterRethrow_View(){
    		   String expected = "\nThis is your dices after they were rethrown.\n";
 	       this.view = new View();
 	       System.setOut(new PrintStream(outContent));
