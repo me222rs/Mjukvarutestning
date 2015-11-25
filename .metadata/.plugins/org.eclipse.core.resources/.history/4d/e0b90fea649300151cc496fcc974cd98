@@ -98,13 +98,7 @@ public class Controller {
 	    }
 	    
 	    Arrays.sort(ints, Collections.reverseOrder());
-	    
-	    Set<Integer> set = new HashSet<Integer>(Arrays.asList(ints)); 
-	    if(set.size() < ints.length )
-	    {
-	    	throw new IllegalArgumentException();
-	    }
-	    
+	  
 	    if(ints[0] == 0){
 	    	
 	    	System.out.print("none");
