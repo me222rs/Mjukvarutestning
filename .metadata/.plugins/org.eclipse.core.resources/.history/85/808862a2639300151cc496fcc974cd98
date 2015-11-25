@@ -98,6 +98,7 @@ public class Controller {
 	    }
 	    
 	    Arrays.sort(ints, Collections.reverseOrder());
+	    Set<Integer> set = new HashSet<Integer>(Arrays.asList(ints)); 
 	    
 	    if(ints[0] == 0){
 	    	

@@ -25,12 +25,12 @@ import Yatzy.View;
 import Yatzy.game;
 
 public class MVCtest {
-		Model model;
-		View view;
-		Controller controller;
-		public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		@Rule
-	    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+	Model model;
+	View view;
+	Controller controller;
+	public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	@Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 		
 		//Test by Emil & Mikael
 	   @Test(expected=InputMismatchException.class)
@@ -144,48 +144,48 @@ public class MVCtest {
 	       assertEquals(expected, outContent.toString());		       
 	   }
 	   	
-   	   //Test by Emil & Mikael
-   	   @Test
-	   public void test_CheckDiceListSize(){
-	   		int expected = 5;
-	   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-		    this.view = new View();
-		    int choice = this.view.MenuChoice(in);
-		    this.controller = new Controller(this.model, this.view);
-		    this.controller.SwitchChoice(choice);
+	   	   //Test by Emil & Mikael
+	   	   @Test
+		   public void test_CheckDiceListSize(){
+		   		int expected = 5;
+		   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+			    this.view = new View();
+			    int choice = this.view.MenuChoice(in);
+			    this.controller = new Controller(this.model, this.view);
+			    this.controller.SwitchChoice(choice);
+				   
+				int result = controller.GetListSize();
+				assertEquals(expected, result);
+		   }
+	   	   
+	   	   @Test
+		   public void Test_RemoveDieFromList_ToBeRethrown(){
 			   
-			int result = controller.GetListSize();
-			assertEquals(expected, result);
-	   }
-   	   //Test by Emil & Mikael
-   	   @Test
-	   public void Test_RemoveDieFromList_ToBeRethrown(){
-		   
-		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+				  view = new View();
+				  int choice = view.MenuChoice(in);
+			   	  controller = new Controller(this.model, this.view);
+				  controller.SwitchChoice(choice);
+		       
+				  controller.ShowRethrowMenu("3"); 
+				  assertEquals(controller.GetListSize(), 4);
+		   }
+	   	   
+	   	   @Test(expected=IllegalArgumentException.class)
+		   public void Test_RemoveDieFromList_ToBeRethrown_OneDie_OneOutOfRange(){
+			   
+	   		  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
 			  int choice = view.MenuChoice(in);
 		   	  controller = new Controller(this.model, this.view);
 			  controller.SwitchChoice(choice);
 	       
-			  controller.ShowRethrowMenu("3"); 
-			  assertEquals(controller.GetListSize(), 4);
-	   }
-   	   //Test by Emil & Mikael
-   	   @Test(expected=IllegalArgumentException.class)
-	   public void Test_RemoveDieFromList_ToBeRethrown_OneDie_OneOutOfRange(){
-		   
-   		  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-		  view = new View();
-		  int choice = view.MenuChoice(in);
-	   	  controller = new Controller(this.model, this.view);
-		  controller.SwitchChoice(choice);
-       
-		  controller.ShowRethrowMenu("7"); 
-		  
-	   }
-	   //Test by Emil & Mikael  
-	   @Test
-	   public void Test_RemoveDicesFromList_3ToBeRethrown(){
+			  controller.ShowRethrowMenu("7"); 
+			  
+		   }
+	   	   
+	   	 @Test
+	   	 public void Test_RemoveDieFromList_3ToBeRethrown(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
@@ -196,10 +196,10 @@ public class MVCtest {
 			  controller.ShowRethrowMenu("3 4 5"); 
 			  assertEquals(controller.GetListSize(), 2);
 	   	 }
-		   	 
-	   	 //Test by Emil & Mikael
-	   	 @Test
-	   	 public void Test_RemoveAllFromList_AllToBeRethrown(){
+	   	 
+	   	 
+	   	@Test
+	   	 public void Test_RemoveDieFromList_3TBeRethrown(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
