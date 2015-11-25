@@ -1,7 +1,0 @@
-package Yatzy;
-
-public class Controller {
-	public Controller (){
-		
-	}
-}

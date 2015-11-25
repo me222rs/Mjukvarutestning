@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 <fullyQualifiedTypeName name="org.mockito.Mockito"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.junit.Rule"/>
 <fullyQualifiedTypeName name="org.junit.contrib.java.lang.system.ExpectedSystemExit"/>
 <fullyQualifiedTypeName name="org.junit.contrib.java.lang.system.SystemOutRule"/>
@@ -28,4 +27,7 @@
 <fullyQualifiedTypeName name="Yatzy.Controller"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>
