@@ -98,11 +98,15 @@ public class View {
 	}
 	
 	public void ShowRethrowMenu(){
+		//System.out.print("\n");
 		System.out.print("\nWhich dice would you like to rethrow? Separate dice positions with a space.\n");
+		
 	}
 	
 	public void AfterRethrow(){
-		System.out.println("\nThis is your dices after they were rethrown.");	
+		//System.out.print("\n");
+		System.out.println("\nThis is your dices after they were rethrown.");
+		
 	}
 		
 }

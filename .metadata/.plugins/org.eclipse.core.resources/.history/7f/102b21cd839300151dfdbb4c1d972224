@@ -272,6 +272,7 @@ public class MVCtest {
 	       this.view = new View();
 	       System.setOut(new PrintStream(outContent));
 	       this.view.ShowRethrowMenu();
+	       
 	       assertEquals(expected, outContent.toString());	
 	   	}
 	   	
