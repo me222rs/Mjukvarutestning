@@ -267,13 +267,9 @@ public class MVCtest {
 	   		d.ThrowDie(0, 6);
 	   	}
 	   	@Test
-	   	public void Test_ShowRethrowMenu_View(){
-   		   String expected = "\nWhich dice would you like to rethrow? Separate dice positions with a space.";
-	       this.view = new View();
-	       System.setOut(new PrintStream(outContent));
-	       this.view.ShowRethrowMenu();
-	       
-	       assertEquals(expected, outContent.toString());	
+	   	public void Test_ThrowDie_minimumValue(){
+	   		Dice d = new Dice();
+	   		d.ThrowDie(0, 6);
 	   	}
 	   	
 

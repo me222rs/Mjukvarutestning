@@ -99,7 +99,7 @@ public class View {
 	
 	public void ShowRethrowMenu(){
 		//System.out.print("\n");
-		System.out.print("\nWhich dice would you like to rethrow? Separate dice positions with a space.\n");
+		System.out.print("\nWhich dice would you like to rethrow? Separate dice positions with a space.");
 		
 	}
 	

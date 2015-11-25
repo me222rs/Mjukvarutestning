@@ -268,7 +268,7 @@ public class MVCtest {
 	   	}
 	   	@Test
 	   	public void Test_ShowRethrowMenu_View(){
-   		   String expected = "\nWhich dice would you like to rethrow? Separate dice positions with a space.";
+   		   String expected = "1";
 	       this.view = new View();
 	       System.setOut(new PrintStream(outContent));
 	       this.view.ShowRethrowMenu();
