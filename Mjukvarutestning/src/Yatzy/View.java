@@ -60,6 +60,30 @@ public class View {
 		return choice;
 		
 	}
+	
+	public String GetMenuInputAsString(ByteArrayInputStream in)
+	{
+		int choice = 0;
+		String choiceAsString = "";
+		
+		//BufferedReader is used so that we can test the menu input
+		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
+			choiceAsString = reader.readLine();
+			
+			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
+				throw new InputMismatchException("Error! Only integers allowed.");
+			}
+			
+		   
+		     
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return choiceAsString;
+	}
 
 	public void PrintResult(List<Dice> diceList) {
 		if(diceList.size() != 5)
@@ -71,6 +95,18 @@ public class View {
 			out += diceList.get(i).GetValue() + " ";	
 		}
 		System.out.print(out.substring(0,out.length()-1));
+	}
+	
+	public void ShowRethrowMenu(){
+		System.out.println();
+		System.out.println("Which dice would you like to rethrow? Separate dice positions with a space.");
+		
+	}
+	
+	public void AfterRethrow(){
+		System.out.println();
+		System.out.println("This is your dices after they were rethrown.");
+		
 	}
 		
 }

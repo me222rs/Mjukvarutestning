@@ -28,6 +28,7 @@ public class MVCtest {
 		Model model;
 		View view;
 		Controller controller;
+		List<Dice> diceList = new ArrayList<Dice>();
 		public final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		@Rule
 	    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
@@ -152,8 +153,8 @@ public class MVCtest {
 		    this.view = new View();
 		    int choice = this.view.MenuChoice(in);
 		    this.controller = new Controller(this.model, this.view);
-		    this.controller.SwitchChoice(choice);
-			   
+		    
+		    controller.ThrowAllDice(diceList);   
 			int result = controller.GetListSize();
 			assertEquals(expected, result);
 	   }
@@ -163,10 +164,9 @@ public class MVCtest {
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
-			  int choice = view.MenuChoice(in);
 		   	  controller = new Controller(this.model, this.view);
-			  controller.SwitchChoice(choice);
-	       
+			  
+			  controller.ThrowAllDice(diceList);
 			  controller.ShowRethrowMenu("3"); 
 			  assertEquals(controller.GetListSize(), 4);
 	   }
@@ -174,25 +174,22 @@ public class MVCtest {
    	   @Test(expected=IllegalArgumentException.class)
 	   public void Test_RemoveDieFromList_ToBeRethrown_OneDie_OneOutOfRange(){
 		   
-   		  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+   		 
 		  view = new View();
-		  int choice = view.MenuChoice(in);
+
 	   	  controller = new Controller(this.model, this.view);
-		  controller.SwitchChoice(choice);
-       
+
+		  controller.ThrowAllDice(diceList);
 		  controller.ShowRethrowMenu("7"); 
 		  
 	   }
 	   //Test by Emil & Mikael  
 	   @Test
 	   public void Test_RemoveDicesFromList_3ToBeRethrown(){
-		   
-		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
-			  int choice = view.MenuChoice(in);
 		   	  controller = new Controller(this.model, this.view);
-			  controller.SwitchChoice(choice);
-	       
+
+			  controller.ThrowAllDice(diceList);
 			  controller.ShowRethrowMenu("3 4 5"); 
 			  assertEquals(controller.GetListSize(), 2);
 	   	 }
@@ -205,7 +202,8 @@ public class MVCtest {
 			  view = new View();
 			  int choice = view.MenuChoice(in);
 		   	  controller = new Controller(this.model, this.view);
-			  controller.SwitchChoice(choice);
+		   	  controller.ThrowAllDice(diceList);
+			  
 	       
 			  controller.ShowRethrowMenu("3 4 5 2 1"); 
 			  assertEquals(controller.GetListSize(), 0);
@@ -215,13 +213,49 @@ public class MVCtest {
 	   	 @Test(expected=IllegalArgumentException.class)
 	   	 public void Test_RemoveDuplicatedFromList_ToBeRethrown(){
 		   
-		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
-			  int choice = view.MenuChoice(in);
 		   	  controller = new Controller(this.model, this.view);
-			  controller.SwitchChoice(choice);
-	       
+
+			  controller.ThrowAllDice(diceList);
 			  controller.ShowRethrowMenu("1 1"); 
+			 
+	   	 }
+	   	 
+	   	 @Test
+	   	 public void Test_RethrowDice_OneDie_SizeIs5(){
+	   		List<Dice>diceList = new ArrayList<Dice>();
+	   		List<Dice> temp = new ArrayList<Dice>();
+			  view = new View();
+		   	  
+		   	  
+		   	  Dice d1 = mock(Dice.class);
+			  when(d1.GetValue()).thenReturn(1);
+			   
+			  Dice d2 = mock(Dice.class);
+			  when(d2.GetValue()).thenReturn(2);
+			   
+			  Dice d3 = mock(Dice.class);
+			  when(d3.GetValue()).thenReturn(3);
+			   
+			  Dice d4 = mock(Dice.class);
+			  when(d4.GetValue()).thenReturn(4);
+			   
+			  Dice d5 = mock(Dice.class);
+			  when(d5.GetValue()).thenReturn(5);
+		   	  
+			  diceList.add(d1);
+		      diceList.add(d2);
+		      diceList.add(d3);
+		      diceList.add(d4);
+		      diceList.add(d5);
+		      controller = new Controller(this.model, this.view);
+			  controller.ThrowAllDice(diceList);
+			  temp = controller.ShowRethrowMenu("1");
+			  diceList = controller.RethrowDice(temp);
+			  
+			  
+			  assertEquals(5, temp.size());
+			  
 			 
 	   	 }
 	   	 

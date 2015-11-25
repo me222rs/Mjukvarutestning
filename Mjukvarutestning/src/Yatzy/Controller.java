@@ -48,11 +48,23 @@ public class Controller {
 	
 	public void SwitchChoice(int choice){
 		List<Dice >diceList = new ArrayList<Dice>();
+		ByteArrayInputStream rethrow;
+		String str;
+		List<Dice> diceToBeRethrown;
 		switch(choice){
 			case 1:
 			{
 				diceList = ThrowAllDice(diceList);
-				view.PrintResult(diceList);	
+				view.PrintResult(diceList);
+				view.ShowRethrowMenu();
+				rethrow = view.InputStartMenu();
+				str = view.GetMenuInputAsString(rethrow);
+				
+				diceToBeRethrown = ShowRethrowMenu(str);
+				diceList = RethrowDice(diceToBeRethrown);
+				
+				view.AfterRethrow();
+				view.PrintResult(diceList);
 				break;
 			}
 			case 2:
@@ -71,15 +83,19 @@ public class Controller {
 		}
 	}
 	
+	public List<Dice> RethrowDice(List<Dice> diceList){
+		return diceList;
+	}
+	
 	public int GetListSize()
 	{
 		return diceList.size();
 	}
 	
 	//Code by Emil & Mikael
-	public int ShowRethrowMenu(String dicesToRethrow){
+	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
 		
-		int msg =0;
+		
 		
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
@@ -108,18 +124,18 @@ public class Controller {
 	    if(ints[0] == 0){
 	    	
 	    	System.out.print("none");
-	    	msg =0;
+	    	
 	    	
 	    	
 	    }
 	    else{
 		    for (int i=0; i < ints.length; i++) {
 		        diceList.remove(ints[i] - 1);
-		        msg++;
+		        
 		    }
 	    }
 	    
-		return msg;
+		return diceList;
 		
 	}
 	
