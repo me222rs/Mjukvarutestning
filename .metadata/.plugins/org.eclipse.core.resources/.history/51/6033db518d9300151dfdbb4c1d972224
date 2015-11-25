@@ -69,7 +69,7 @@ public class View {
 		Scanner scanner = new Scanner(System.in);
 		//while(scanner.hasNext())
 		//{
-			input = scanner.nextLine();
+			input += scanner.nextLine();
 		//}
      	
 		System.out.println(input);

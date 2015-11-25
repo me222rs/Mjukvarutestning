@@ -48,8 +48,8 @@ public class Controller {
 	
 	public void SwitchChoice(int choice){
 		List<Dice >diceList = new ArrayList<Dice>();
-		String rethrow;
-		
+		ByteArrayInputStream rethrow;
+		String str;
 		List<Dice> diceToBeRethrown;
 		switch(choice){
 			case 1:
@@ -57,10 +57,10 @@ public class Controller {
 				diceList = ThrowAllDice(diceList);
 				view.PrintResult(diceList);
 				view.ShowRethrowMenu();
-				rethrow = view.GetRethrow();
-				
-				
-				diceToBeRethrown = ShowRethrowMenu(rethrow);
+				rethrow = view.InputStartMenu();
+				str = view.GetMenuInputAsString(rethrow);
+				System.out.println(str);
+				diceToBeRethrown = ShowRethrowMenu(str);
 				diceList = RethrowDice(diceToBeRethrown);
 				
 				view.AfterRethrow();

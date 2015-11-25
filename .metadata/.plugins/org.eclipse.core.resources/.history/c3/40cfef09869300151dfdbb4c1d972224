@@ -293,7 +293,7 @@ public class MVCtest {
 		   	  controller = new Controller(this.model, this.view);
 		   	  controller.ThrowAllDice(diceList);
 
-			  controller.ShowRethrowMenu("1 7"); 
+			  controller.ShowRethrowMenu("3 4 5 7 1"); 
 	   	 }
 	   	
 

@@ -67,10 +67,10 @@ public class View {
 //		public ByteArrayInputStream InputStartMenu(){
 		String input = null;
 		Scanner scanner = new Scanner(System.in);
-		//while(scanner.hasNext())
-		//{
-			input = scanner.nextLine();
-		//}
+		while(scanner.hasNext())
+		{
+			input += scanner.next();
+		}
      	
 		System.out.println(input);
      	return input;

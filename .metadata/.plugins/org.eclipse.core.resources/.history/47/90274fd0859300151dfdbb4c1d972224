@@ -284,17 +284,5 @@ public class MVCtest {
 	       assertEquals(expected, outContent.toString());	
 	   	}
 	   	
-	   	
-	   	 @Test (expected = IndexOutOfBoundsException.class)
-	   	 public void Test_RegexRethrow(){
-		   
-		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-			  view = new View();
-		   	  controller = new Controller(this.model, this.view);
-		   	  controller.ThrowAllDice(diceList);
-
-			  controller.ShowRethrowMenu("1 7"); 
-	   	 }
-	   	
 
 }
