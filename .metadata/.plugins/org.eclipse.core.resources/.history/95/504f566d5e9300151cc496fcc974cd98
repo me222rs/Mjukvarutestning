@@ -183,19 +183,6 @@ public class MVCtest {
 			  controller.ShowRethrowMenu("7"); 
 			  
 		   }
-	   	   
-	   	 @Test
-		   public void Test_RemoveDieFromList_MultipleToBeRethrown(){
-			   
-			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-				  view = new View();
-				  int choice = view.MenuChoice(in);
-			   	  controller = new Controller(this.model, this.view);
-				  controller.SwitchChoice(choice);
-		       
-				  controller.ShowRethrowMenu("3 4 5"); 
-				  assertEquals(controller.GetListSize(), 2);
-		   }
 	   	
 
 }
