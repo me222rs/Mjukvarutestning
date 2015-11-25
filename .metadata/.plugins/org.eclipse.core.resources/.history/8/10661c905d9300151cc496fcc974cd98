@@ -74,13 +74,10 @@ public class Controller {
 		return diceList.size();
 	}
 	
-	//Code by Emil & Mikael
+		//Code by Emil & Mikael
 		public int ShowRethrowMenu(String dicesToRethrow){
 			
 			int msg =0;
-			
-			
-			
 			String[] splitted = dicesToRethrow.split("\\s+");
 			
 		    Integer[] ints = new Integer[splitted.length];

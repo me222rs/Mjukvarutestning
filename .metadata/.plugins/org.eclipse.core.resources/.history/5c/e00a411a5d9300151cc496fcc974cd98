@@ -158,7 +158,7 @@ public class MVCtest {
 				assertEquals(expected, result);
 		   }
 	   	   
-	   	   @Test
+	   	 @Test
 		   public void Test_RemoveDieFromList_ToBeRethrown(){
 			   
 			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
@@ -169,19 +169,6 @@ public class MVCtest {
 		       
 				  controller.ShowRethrowMenu("3"); 
 				  assertEquals(controller.GetListSize(), 4);
-		   }
-	   	   
-	   	   @Test(expected=IllegalArgumentException.class)
-		   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOfRange(){
-			   
-	   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-			  view = new View();
-			  int choice = view.MenuChoice(in);
-		   	  controller = new Controller(this.model, this.view);
-			  controller.SwitchChoice(choice);
-	       
-			  controller.ShowRethrowMenu("7"); 
-			  
 		   }
 	   	
 

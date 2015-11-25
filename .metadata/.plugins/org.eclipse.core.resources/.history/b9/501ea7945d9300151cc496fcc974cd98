@@ -171,7 +171,7 @@ public class MVCtest {
 				  assertEquals(controller.GetListSize(), 4);
 		   }
 	   	   
-	   	   @Test(expected=IllegalArgumentException.class)
+	   	   @Test(expected=IndexOutOfBoundsException.class)
 		   public void Test_RemoveDieFromList_ToBeRethrown_AllDices_OneOutOfRange(){
 			   
 	   		ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
