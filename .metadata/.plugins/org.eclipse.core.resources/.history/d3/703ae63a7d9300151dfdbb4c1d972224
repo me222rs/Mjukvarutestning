@@ -84,12 +84,6 @@ public class Controller {
 	}
 	
 	public List<Dice> RethrowDice(List<Dice> diceList){
-		for(int i = 0; diceList.size() < 5;i++){
-			Dice d = new Dice();
-			d.ThrowDie(1, 6);
-			diceList.add(d);
-		}
-		System.out.println(diceList.size());
 		return diceList;
 	}
 	
