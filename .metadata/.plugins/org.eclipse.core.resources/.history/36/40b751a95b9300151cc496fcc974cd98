@@ -167,8 +167,8 @@ public class MVCtest {
 			   	  controller = new Controller(this.model, this.view);
 				  controller.SwitchChoice(choice);
 		       
-				  controller.ShowRethrowMenu("3"); 
-				  assertEquals(controller.GetListSize(), 4);
+		       controller.ShowRethrowMenu("3"); 
+			   assertEquals(controller.GetListSize(), 4);
 		   }
 	   	
 

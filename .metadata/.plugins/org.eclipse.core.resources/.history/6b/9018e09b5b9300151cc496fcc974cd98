@@ -162,13 +162,13 @@ public class MVCtest {
 		   public void Test_RemoveDieFromList_ToBeRethrown(){
 			   
 			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-				  view = new View();
-				  int choice = view.MenuChoice(in);
-			   	  controller = new Controller(this.model, this.view);
-				  controller.SwitchChoice(choice);
+				  this.view = new View();
+				  int choice = this.view.MenuChoice(in);
+			   	  this.controller = new Controller(this.model, this.view);
+				  this.controller.SwitchChoice(choice);
 		       
-				  controller.ShowRethrowMenu("3"); 
-				  assertEquals(controller.GetListSize(), 4);
+		       g.ShowRethrowMenu("3", null); 
+			   assertEquals(g.ListSize(), 4);
 		   }
 	   	
 

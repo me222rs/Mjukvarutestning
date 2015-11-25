@@ -78,8 +78,38 @@ public class Controller {
 		public int ShowRethrowMenu(String dicesToRethrow){
 			
 			int msg =0;
+			//New simpler regex then we used before
+			if(!dicesToRethrow.matches("[0-9 ]+")){
+				throw new NumberFormatException("Only numbers allowed!");
+			}
 			
+			if(!dicesToRethrow.matches("[0-5 ]+"))
+			{
+				throw new IllegalArgumentException("Error not in Range of 1-5 input.");
+			}
+			
+			String[] splitted = dicesToRethrow.split("\\s+");
+			
+		    Integer[] ints = new Integer[splitted.length];
+		    for (int i=0; i < splitted.length; i++) {
+		        ints[i] = Integer.parseInt(splitted[i]);
+		    }
 		    
+		    Arrays.sort(ints, Collections.reverseOrder());
+		    //Points p = new Points(diceList);
+		    if(ints[0] == 0){
+		    	//Check the value of the dices and calculate points
+		    	System.out.print("none");
+		    	msg =0;
+		    	
+		    	
+		    }
+		    else{
+			    for (int i=0; i < ints.length; i++) {
+			        diceList.remove(ints[i] - 1);
+			        msg++;
+			    }
+		    }
 			return msg;
 			
 		}

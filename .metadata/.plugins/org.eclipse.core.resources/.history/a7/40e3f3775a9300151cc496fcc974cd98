@@ -157,19 +157,6 @@ public class MVCtest {
 				int result = controller.GetListSize();
 				assertEquals(expected, result);
 		   }
-	   	   
-	   	 @Test
-		   public void Test_RemoveDieFromList_ToBeRethrown(){
-			   
-			   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-				  view = new View();
-				  int choice = view.MenuChoice(in);
-			   	  controller = new Controller(this.model, this.view);
-				  controller.SwitchChoice(choice);
-		       
-				  controller.ShowRethrowMenu("3"); 
-				  assertEquals(controller.GetListSize(), 4);
-		   }
 	   	
 
 }
