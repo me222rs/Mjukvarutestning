@@ -199,7 +199,7 @@ public class MVCtest {
 		   	 
 	   	 //Test by Emil & Mikael
 	   	 @Test
-	   	 public void Test_RemoveDicesFromList_AllToBeRethrown(){
+	   	 public void Test_RemoveAllFromList_AllToBeRethrown(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
@@ -213,7 +213,7 @@ public class MVCtest {
 	   	 
 	     //Test by Emil & Mikael
 	   	 @Test(expected=IllegalArgumentException.class)
-	   	 public void Test_RemoveDuplicatedFromList_ToBeRethrown(){
+	   	 public void Test_RemoveDupliceFromList_AllToBeRethrown(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();

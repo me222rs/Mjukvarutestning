@@ -213,7 +213,7 @@ public class MVCtest {
 	   	 
 	     //Test by Emil & Mikael
 	   	 @Test(expected=IllegalArgumentException.class)
-	   	 public void Test_RemoveDuplicatedFromList_ToBeRethrown(){
+	   	 public void Test_RemoveDupliceFromList_ToBeRethrown(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
