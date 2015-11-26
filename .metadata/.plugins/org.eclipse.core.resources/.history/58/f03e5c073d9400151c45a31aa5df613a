@@ -46,11 +46,6 @@ public class Model {
 			msg = "Full house (28 points)";
 			return msg;
 		}
-		if(two == 1 && three == 1 && four ==1 && five == 1 && six == 1){
-			msg = "Large straight (20 points)";
-			return msg;
-		}
-			
 		
 		
 		return "test";
