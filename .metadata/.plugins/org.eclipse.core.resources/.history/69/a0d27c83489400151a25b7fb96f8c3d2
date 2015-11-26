@@ -103,7 +103,7 @@ public class View {
 	}
 
 	public void PrintPointsResult(String str) {
-		System.out.print("\n" + str);
+		System.out.print(str + "\n");
 	}
 		
 }
