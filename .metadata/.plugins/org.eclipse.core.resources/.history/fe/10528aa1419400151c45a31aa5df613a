@@ -518,7 +518,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_OnePair(){
+	   	public void Test_Result_TwoPai(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "One pair (4 points)";
 			   
