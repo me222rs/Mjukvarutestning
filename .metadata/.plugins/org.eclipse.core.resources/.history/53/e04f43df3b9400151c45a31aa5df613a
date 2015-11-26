@@ -43,8 +43,7 @@ public class Model {
 				|| four == 3 &&(one == 2 || two == 2 || three == 2 || five == 2 || six == 2)
 				|| five == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || six == 2)
 				|| six == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || five == 2)){
-			msg = "Full house (28 points)";
-			return msg;
+			return "Full house (28 points)";
 		}
 		
 		return "test";
