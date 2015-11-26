@@ -110,15 +110,22 @@ public class Controller {
 		}
 		
 		String[] splitted = dicesToRethrow.split("\\s+");
-		
+		int check = 0;
 		int count =0;
 	    Integer[] ints = new Integer[splitted.length];
 	    boolean t = false;
 	    for (int i=0; i < splitted.length; i++) {
 	        ints[i] = Integer.parseInt(splitted[i]);
-	        
-	        
-	        
+	        check = Integer.parseInt(splitted[i]);
+	        if(check == 0)
+	        {
+	        	t = true;
+	        }
+	        if(count > 0)
+	        {
+		        throw new IllegalArgumentException();
+	        }
+	        count++;
 	    }
 	    
 	    Arrays.sort(ints, Collections.reverseOrder());
@@ -129,12 +136,19 @@ public class Controller {
 	    	throw new IllegalArgumentException("Error!Can't remove the same dice.");
 	    }
 	    
-    
-	    for (int i=0; i < ints.length; i++) {
-	        diceList.remove(ints[i] - 1);
-	        
+	    if(t){
+	    	
+	    	System.out.print("none");
+	    	return diceList;
+	    	
+	    	
 	    }
-	    
+	    else{
+		    for (int i=0; i < ints.length; i++) {
+		        diceList.remove(ints[i] - 1);
+		        
+		    }
+	    }
 	    
 		return diceList;
 		

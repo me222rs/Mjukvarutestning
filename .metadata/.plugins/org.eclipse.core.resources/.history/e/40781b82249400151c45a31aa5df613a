@@ -295,8 +295,6 @@ public class MVCtest {
 
 			  controller.ShowRethrowMenu("1 6"); 
 	   	 }
-	   	 
-	  
 	   	
 
 }

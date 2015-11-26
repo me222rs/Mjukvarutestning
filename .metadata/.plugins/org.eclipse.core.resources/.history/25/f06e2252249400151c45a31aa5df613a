@@ -286,7 +286,7 @@ public class MVCtest {
 	   	
 	   	
 	   	 @Test (expected = IllegalArgumentException.class)
-	   	 public void Test_RethrowDices_NonExistingDice_HighInput(){
+	   	 public void Test_RegexRethrow(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
@@ -295,8 +295,6 @@ public class MVCtest {
 
 			  controller.ShowRethrowMenu("1 6"); 
 	   	 }
-	   	 
-	  
 	   	
 
 }

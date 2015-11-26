@@ -296,7 +296,16 @@ public class MVCtest {
 			  controller.ShowRethrowMenu("1 6"); 
 	   	 }
 	   	 
-	  
+	   	@Test (expected = IllegalArgumentException.class)
+	   	 public void Test_RethrowDices_NonExistingDice_Input(){
+		   
+		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+			  view = new View();
+		   	  controller = new Controller(this.model, this.view);
+		   	  controller.ThrowAllDice(diceList);
+
+			  controller.ShowRethrowMenu("1 0"); 
+	   	 }
 	   	
 
 }
