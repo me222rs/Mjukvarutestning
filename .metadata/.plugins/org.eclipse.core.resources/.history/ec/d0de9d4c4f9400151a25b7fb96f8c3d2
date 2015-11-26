@@ -105,10 +105,6 @@ public class Controller {
 			throw new IllegalArgumentException("First character cannot be whitespace.");
 		}
 		
-		if(Character.isWhitespace(dicesToRethrow.charAt(dicesToRethrow.length()-1))){
-			throw new IllegalArgumentException();
-		}
-		
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}
