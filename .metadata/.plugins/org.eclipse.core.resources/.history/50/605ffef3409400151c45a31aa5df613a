@@ -488,7 +488,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_TwoPair(){
+	   	public void Test_Result_ThreeOfAKi(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "Two pair (6 points)";
 			   
