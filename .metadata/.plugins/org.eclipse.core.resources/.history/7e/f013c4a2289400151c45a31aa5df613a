@@ -113,7 +113,7 @@ public class Controller {
 		int check = 0;
 		int count =0;
 	    Integer[] ints = new Integer[splitted.length];
-	    
+	    boolean t = false;
 	    for (int i=0; i < splitted.length; i++) {
 	        ints[i] = Integer.parseInt(splitted[i]);
 	        check = Integer.parseInt(splitted[i]);
@@ -145,6 +145,7 @@ public class Controller {
 	        diceList.remove(ints[i] - 1);
 	        
 	    }
+	    
 	    
 		return diceList;
 		

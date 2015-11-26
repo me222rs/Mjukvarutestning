@@ -297,7 +297,7 @@ public class MVCtest {
 	   	 }
 	   	 
 	   	@Test (expected = IllegalArgumentException.class)
-	   	 public void Test_RethrowDices_NonExistingDice_LowInput(){
+	   	 public void Test_RethrowDices_NonExistingDice_Input(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
 			  view = new View();
