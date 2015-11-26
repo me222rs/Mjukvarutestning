@@ -581,8 +581,9 @@ public class MVCtest {
 	   	}
 		
 		@Test
-		public void Test_PointsResult_ConsoleOutput(){
+		public void Test_PointsResult(){
 		       this.view = new View();
+		       
 		       
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "3 3 6 1 5\nOne pair (4 points)";
@@ -607,7 +608,8 @@ public class MVCtest {
 		       diceList.add(d3);
 		       diceList.add(d4);
 		       diceList.add(d5);
-
+		       
+		       //String str = "";
 		       String result = model.CalculatePoints(diceList);
 		       System.setOut(new PrintStream(outContent));
 		       view.PrintResult(diceList);

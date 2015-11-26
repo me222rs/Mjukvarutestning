@@ -59,7 +59,8 @@ public class Controller {
 				view.PrintResult(diceList);
 				view.ShowRethrowMenu();
 				rethrow = view.GetRethrow();
-
+				
+				
 				diceToBeRethrown = ShowRethrowMenu(rethrow);
 				diceList = RethrowDice(diceToBeRethrown);
 				
@@ -67,6 +68,7 @@ public class Controller {
 				view.PrintResult(diceList);
 				result = model.CalculatePoints(diceList);
 				view.PrintPointsResult(result);
+				//System.out.println(result);
 				break;
 			}
 			case 2:
