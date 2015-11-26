@@ -398,7 +398,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_SmallStraight(){
+	   	public void Test_Result_Straight(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "Small straight (15 points)";
 			   
