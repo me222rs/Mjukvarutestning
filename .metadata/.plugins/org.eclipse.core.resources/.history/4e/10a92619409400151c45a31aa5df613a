@@ -59,10 +59,6 @@ public class Model {
 			msg = "Four of a kind (12 points)";
 			return msg;
 		}
-		if(one == 3 || two == 3 || three == 3 || four == 3 || five == 3 || six == 3){
-			msg = "Three of a kind (8 points)";
-			return msg;
-		}
 			
 		
 		
