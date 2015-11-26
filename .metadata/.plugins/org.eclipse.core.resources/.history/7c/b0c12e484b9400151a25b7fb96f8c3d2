@@ -101,6 +101,10 @@ public class Controller {
 	
 	//Code by Emil & Mikael
 	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
+		if(dicesToRethrow.matches("^ .*")){
+			throw new IllegalArgumentException();
+		}
+		
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}

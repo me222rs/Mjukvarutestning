@@ -101,6 +101,7 @@ public class Controller {
 	
 	//Code by Emil & Mikael
 	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
+
 		if(!dicesToRethrow.matches("[0-9 ]+")){
 			throw new NumberFormatException("Only numbers allowed!");
 		}
@@ -109,7 +110,6 @@ public class Controller {
 		{
 			throw new IllegalArgumentException("Error not in Range of 1-5 input. Dice does not exist");
 		}
-		
 		
 		String[] splitted = dicesToRethrow.split("\\s+");
 		int check = 0;
