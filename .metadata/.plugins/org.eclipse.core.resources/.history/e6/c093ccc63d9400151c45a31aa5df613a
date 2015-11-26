@@ -400,7 +400,7 @@ public class MVCtest {
 		@Test
 	   	public void Test_Result_Straight(){
 			   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "Small straight (15 points)";
+			   String expected = "Small straight (20 points)";
 			   
 			   Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(1);

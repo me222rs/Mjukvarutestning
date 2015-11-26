@@ -50,11 +50,6 @@ public class Model {
 			msg = "Large straight (20 points)";
 			return msg;
 		}
-		if(one == 1 && two == 1 && three == 1 && four == 1 && five == 1)
-		{
-			msg = "Small straight (15 points)";
-			return msg;
-		}
 			
 		
 		
