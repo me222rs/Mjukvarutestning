@@ -63,15 +63,7 @@ public class Model {
 			msg = "Three of a kind (8 points)";
 			return msg;
 		}
-		if(one == 2 &&(two == 2 || three == 2 || four == 2 || five == 2 || six == 2)
-				|| two == 2 &&(one == 2 || three == 2 || four == 2 || five == 2 || six == 2)
-				|| three == 2 &&(one == 2 || two == 2 || four == 2 || five == 2 || six == 2)
-				|| four == 2 &&(one == 2 || two == 2 || three == 2 || five == 2 || six == 2)
-				|| five == 2 &&(one == 2 || two == 2 || three == 2 || four == 2 || six == 2)
-				|| six == 2 &&(one == 2 || two == 2 || three == 2 || four == 2 || five == 2)){
-			msg = "Two pair (6 points)";
-			return msg;
-		}
+		
 		
 		
 		return "test";
