@@ -548,7 +548,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_ChanceOrNothing(){
+	   	public void Test_Result_On(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   
 			   
