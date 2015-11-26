@@ -49,7 +49,6 @@ public class Controller {
 	public void SwitchChoice(int choice){
 		List<Dice >diceList = new ArrayList<Dice>();
 		String rethrow;
-		String result = "";
 		
 		List<Dice> diceToBeRethrown;
 		switch(choice){
@@ -66,8 +65,7 @@ public class Controller {
 				
 				view.AfterRethrow();
 				view.PrintResult(diceList);
-				result = model.CalculatePoints(diceList);
-				System.out.println(result);
+				model.CalculatePoints(diceList);
 				break;
 			}
 			case 2:

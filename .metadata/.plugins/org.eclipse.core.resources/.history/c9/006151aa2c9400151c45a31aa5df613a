@@ -15,25 +15,7 @@ public class Model {
 			if(diceList.get(i).GetValue()== 1){
 				one++;
 			}
-			if(diceList.get(i).GetValue()== 2){
-				two++;
-			}
-			if(diceList.get(i).GetValue()== 3){
-				three++;
-			}
-			if(diceList.get(i).GetValue()== 4){
-				four++;
-			}
-			if(diceList.get(i).GetValue()== 5){
-				five++;
-			}
-			if(diceList.get(i).GetValue()== 6){
-				six++;
-			}
-			
 		}
-		
-		
 		
 		return "test";
 		

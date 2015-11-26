@@ -1,0 +1,10 @@
+package Yatzy;
+
+import java.util.List;
+
+public class Model {
+	public String CalculatePoints(List<Dice> diceList){
+		return "test";
+		
+	}
+}

@@ -22,12 +22,7 @@ public class View {
 	public ByteArrayInputStream InputStartMenu(){
 		int input;
 		Scanner scanner = new Scanner(System.in);
-		try{
      	input = scanner.nextInt();
-		}
-		catch(InputMismatchException e){
-			throw new InputMismatchException("Error! Only integers allowed.");
-		}
      	
      	StringBuilder sb = new StringBuilder();
      	sb.append("");

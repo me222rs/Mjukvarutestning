@@ -33,7 +33,9 @@ public class Model {
 			
 		}
 		
-		
+		if(one == 5 || two == 5 || three == 5 || four == 5 || five == 5 || six == 5){
+			return "Yatzy (50 points)";
+		}
 		
 		return "test";
 		

@@ -25,7 +25,7 @@ import Yatzy.View;
 import Yatzy.game;
 
 public class MVCtest {
-		Model model = new Model();
+		Model model;
 		View view;
 		Controller controller;
 		List<Dice> diceList = new ArrayList<Dice>();
@@ -310,7 +310,7 @@ public class MVCtest {
 	   	@Test
 	   	public void Test_Result_Yatzy(){
 			   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "Yatzy (50 points)";
+			   String expected = "Full house (28 points)";
 			   
 			   Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(1);
