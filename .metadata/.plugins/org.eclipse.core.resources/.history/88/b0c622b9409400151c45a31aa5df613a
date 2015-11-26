@@ -63,7 +63,7 @@ public class Model {
 			msg = "Three of a kind (8 points)";
 			return msg;
 		}
-		
+			
 		
 		
 		return "test";
