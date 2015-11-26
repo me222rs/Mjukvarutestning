@@ -101,6 +101,10 @@ public class View {
 	public void AfterRethrow(){
 		System.out.print("\nThis is your dices after they were rethrown.\n");	
 	}
+
+	public void PrintPointsResult(String str) {
+		
+	}
 		
 }
 

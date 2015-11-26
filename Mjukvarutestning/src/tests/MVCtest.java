@@ -579,6 +579,45 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
+		
+		@Test
+		public void Test_PointsResult(){
+		       this.view = new View();
+		       
+		       
+			   List<Dice>diceList = new ArrayList<Dice>();
+			   String expected = "3 3 6 1 5\nOne pair (4 points)";
+			   
+			   Dice d1 = mock(Dice.class);
+			   when(d1.GetValue()).thenReturn(3);
+			   
+			   Dice d2 = mock(Dice.class);
+			   when(d2.GetValue()).thenReturn(3);
+			   
+			   Dice d3 = mock(Dice.class);
+			   when(d3.GetValue()).thenReturn(6);
+			   
+			   Dice d4 = mock(Dice.class);
+			   when(d4.GetValue()).thenReturn(1);
+			   
+			   Dice d5 = mock(Dice.class);
+			   when(d5.GetValue()).thenReturn(5);
+			   
+		       diceList.add(d1);
+		       diceList.add(d2);
+		       diceList.add(d3);
+		       diceList.add(d4);
+		       diceList.add(d5);
+		       
+		       //String str = "";
+		       String result = model.CalculatePoints(diceList);
+		       System.setOut(new PrintStream(outContent));
+		       view.PrintResult(diceList);
+		       view.PrintPointsResult(result);
+		       
+		       assertEquals(expected, outContent.toString());
+		       	
+		}
 
 
 }

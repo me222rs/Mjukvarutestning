@@ -67,7 +67,8 @@ public class Controller {
 				view.AfterRethrow();
 				view.PrintResult(diceList);
 				result = model.CalculatePoints(diceList);
-				System.out.println(result);
+				view.PrintPointsResult(result);
+				//System.out.println(result);
 				break;
 			}
 			case 2:
