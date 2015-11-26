@@ -338,7 +338,7 @@ public class MVCtest {
 	   	}
 	   	
 		@Test
-	   	public void Test_Result_FullHouse(){
+	   	public void Test_Result_Yatz(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "Full house (28 points)";
 			   
@@ -366,36 +366,5 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
-		@Test
-	   	public void Test_Result_Full(){
-			   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "Large straight (20 points)";
-			   
-			   Dice d1 = mock(Dice.class);
-			   when(d1.GetValue()).thenReturn(2);
-			   
-			   Dice d2 = mock(Dice.class);
-			   when(d2.GetValue()).thenReturn(3);
-			   
-			   Dice d3 = mock(Dice.class);
-			   when(d3.GetValue()).thenReturn(4);
-			   
-			   Dice d4 = mock(Dice.class);
-			   when(d4.GetValue()).thenReturn(5);
-			   
-			   Dice d5 = mock(Dice.class);
-			   when(d5.GetValue()).thenReturn(6);
-			   
-		       diceList.add(d1);
-		       diceList.add(d2);
-		       diceList.add(d3);
-		       diceList.add(d4);
-		       diceList.add(d5);
-		       
-		       String result = model.CalculatePoints(diceList);
-		       assertEquals(expected,result);
-	   	}
-
 
 }
