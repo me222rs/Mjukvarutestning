@@ -72,11 +72,6 @@ public class Model {
 			msg = "Two pair (6 points)";
 			return msg;
 		}
-		if(one == 2 || two == 2 || three == 2 || four == 2 || five == 2|| six == 2){
-			msg = "One pair (4 points)";
-			return msg;
-		}
-			
 		
 		
 		return "test";
