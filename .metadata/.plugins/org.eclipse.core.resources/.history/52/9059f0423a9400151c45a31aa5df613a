@@ -36,7 +36,14 @@ public class Model {
 		if(one == 5 || two == 5 || three == 5 || four == 5 || five == 5 || six == 5){
 			return "Yatzy (50 points)";
 		}
-		
+		if(one == 3 && (two == 2 || three == 2 || four == 2 || five == 2 || six == 2 )
+				|| two == 3 &&(one == 2 || three == 2 || four == 2 || five == 2 || six == 2)
+				|| three == 3 &&(one == 2 || two == 2 || four == 2 || five == 2 || six == 2)
+				|| four == 3 &&(one == 2 || two == 2 || three == 2 || five == 2 || six == 2)
+				|| five == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || six == 2)
+				|| six == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || five == 2)){
+			return "Full house (28 points)";
+		}
 		
 		return "test";
 		
