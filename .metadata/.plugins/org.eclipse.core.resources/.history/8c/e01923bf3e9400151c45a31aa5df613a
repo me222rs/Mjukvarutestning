@@ -55,10 +55,6 @@ public class Model {
 			msg = "Small straight (15 points)";
 			return msg;
 		}
-		if(one == 4 || two == 4 || three == 4 || four == 4 || five == 4 || six == 4){
-			msg = "Four of a kind (12 points)";
-			return msg;
-		}
 			
 		
 		
