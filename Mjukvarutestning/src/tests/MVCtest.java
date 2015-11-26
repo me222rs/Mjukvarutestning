@@ -285,7 +285,7 @@ public class MVCtest {
 	   	}
 	   	
 	   	
-	   	 @Test (expected = IndexOutOfBoundsException.class)
+	   	 @Test (expected = IllegalArgumentException.class)
 	   	 public void Test_RegexRethrow(){
 		   
 		   	  ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
@@ -293,7 +293,7 @@ public class MVCtest {
 		   	  controller = new Controller(this.model, this.view);
 		   	  controller.ThrowAllDice(diceList);
 
-			  controller.ShowRethrowMenu("1 7"); 
+			  controller.ShowRethrowMenu("1 6"); 
 	   	 }
 	   	
 
