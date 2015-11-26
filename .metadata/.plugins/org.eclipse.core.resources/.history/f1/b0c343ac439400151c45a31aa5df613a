@@ -78,11 +78,7 @@ public class Model {
 			msg = "One pair (4 points)";
 			return msg;
 		}
-		else
-		{
-			msg = "Result: "+sum+" save as chance or scratch something in your Yatzy list";
-			return msg;
-		}
+		return msg;
 			
 		
 		
