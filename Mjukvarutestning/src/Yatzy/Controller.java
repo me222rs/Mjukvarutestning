@@ -106,7 +106,7 @@ public class Controller {
 		}
 		
 		if(Character.isWhitespace(dicesToRethrow.charAt(dicesToRethrow.length()-1))){
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Last character cannot be whitespace.");
 		}
 		
 		if(!dicesToRethrow.matches("[0-9 ]+")){
