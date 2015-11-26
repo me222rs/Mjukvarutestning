@@ -10,7 +10,7 @@ public class Model {
 		int four = 0;
 		int five = 0;
 		int six = 0;
-		String msg ="";
+		
 		for(int i = 0; i< diceList.size();i++){
 			if(diceList.get(i).GetValue()== 1){
 				one++;
@@ -34,8 +34,7 @@ public class Model {
 		}
 		
 		if(one == 5 || two == 5 || three == 5 || four == 5 || five == 5 || six == 5){
-			msg = "Yatzy (50 points)";
-			return msg;
+			return "Yatzy (50 points)";
 		}
 		
 		
