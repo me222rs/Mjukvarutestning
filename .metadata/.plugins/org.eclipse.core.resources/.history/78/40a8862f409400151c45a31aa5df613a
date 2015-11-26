@@ -458,7 +458,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_ThreeOfAKind(){
+	   	public void Test_Result_Th(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "Three of a kind (8 points)";
 			   
