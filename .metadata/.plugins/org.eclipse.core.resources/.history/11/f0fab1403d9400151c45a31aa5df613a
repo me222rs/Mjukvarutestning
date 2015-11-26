@@ -368,7 +368,7 @@ public class MVCtest {
 	   	}
 		
 		@Test
-	   	public void Test_Result_LargeStraight(){
+	   	public void Test_Result_Full(){
 			   List<Dice>diceList = new ArrayList<Dice>();
 			   String expected = "Large straight (20 points)";
 			   
