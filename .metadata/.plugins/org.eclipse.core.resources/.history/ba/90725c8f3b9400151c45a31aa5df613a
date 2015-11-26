@@ -37,14 +37,7 @@ public class Model {
 			msg = "Yatzy (50 points)";
 			return msg;
 		}
-		if(one == 3 && (two == 2 || three == 2 || four == 2 || five == 2 || six == 2 )
-				|| two == 3 &&(one == 2 || three == 2 || four == 2 || five == 2 || six == 2)
-				|| three == 3 &&(one == 2 || two == 2 || four == 2 || five == 2 || six == 2)
-				|| four == 3 &&(one == 2 || two == 2 || three == 2 || five == 2 || six == 2)
-				|| five == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || six == 2)
-				|| six == 3 &&(one == 2 || two == 2 || three == 2 || four == 2 || five == 2)){
-			return "Full house (28 points)";
-		}
+		
 		
 		return "test";
 		
