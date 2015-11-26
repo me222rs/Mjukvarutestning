@@ -569,7 +569,7 @@ public class MVCtest {
 			   int sum =(d1.GetValue()+d2.GetValue()+d3.GetValue()+d4.GetValue()+d5.GetValue());
 			   
 			   
-			   String expected = "Result: "+sum+" save as chance or scratch something in your Yatzy list";
+			   String expected = "Result: "+sum+"save as chance or scratch something in your Yatzy list";
 		       diceList.add(d1);
 		       diceList.add(d2);
 		       diceList.add(d3);

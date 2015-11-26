@@ -550,7 +550,7 @@ public class MVCtest {
 		@Test
 	   	public void Test_Result_On(){
 			   List<Dice>diceList = new ArrayList<Dice>();
-			   
+			   String expected = "One pair (4 points)";
 			   
 			   Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(1);
@@ -566,10 +566,7 @@ public class MVCtest {
 			   
 			   Dice d5 = mock(Dice.class);
 			   when(d5.GetValue()).thenReturn(3);
-			   int sum =(d1.GetValue()+d2.GetValue()+d3.GetValue()+d4.GetValue()+d5.GetValue());
 			   
-			   
-			   String expected = "Result: "+sum+" save as chance or scratch something in your Yatzy list";
 		       diceList.add(d1);
 		       diceList.add(d2);
 		       diceList.add(d3);

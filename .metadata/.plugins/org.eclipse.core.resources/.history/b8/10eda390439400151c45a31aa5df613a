@@ -78,7 +78,7 @@ public class Model {
 			msg = "One pair (4 points)";
 			return msg;
 		}
-		return msg;
+		
 			
 		
 		
