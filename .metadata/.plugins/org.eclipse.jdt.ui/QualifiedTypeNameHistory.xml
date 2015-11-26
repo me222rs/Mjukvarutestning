@@ -25,10 +25,10 @@
 <fullyQualifiedTypeName name="Yatzy.Model"/>
 <fullyQualifiedTypeName name="Yatzy.View"/>
 <fullyQualifiedTypeName name="Yatzy.Controller"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.Base64"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
