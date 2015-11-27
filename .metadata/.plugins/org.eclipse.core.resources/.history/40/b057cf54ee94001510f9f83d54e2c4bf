@@ -645,19 +645,6 @@ public class MVCtest {
 		}
 		
 
-	   	@Test
-	   	public void Test_HowToPlay_View_Output(){
-   		   String expected = "\nThis is a yatzee game with our own rules. Start the game by pressing Play. You will be presented with 5 values which are the dices that were thrown. You can now rethrow the dices by typing the position of the dice, for multiple dices to rethrow you can separate the positions with a space. The score will then be presented after you rethrow. You can only rethrow once.";
-   		   
-			ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
-		    this.view = new View();
-		    int choice = this.view.MenuChoice(in);
-		    this.controller = new Controller(this.model, this.view);
-		    System.setOut(new PrintStream(outContent));
-		    
-		    this.controller.SwitchChoice(choice);
-		    
-	        assertEquals(expected, outContent.toString());	
-	   	}
+
 
 }

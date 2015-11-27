@@ -20,6 +20,10 @@ public class View {
 		System.out.println("3 - Exit");
 	}
 	
+	public void HowToPlayInstructions(){
+
+	}
+	
 	public ByteArrayInputStream InputStartMenu(){
 		int input;
 		Scanner scanner = new Scanner(System.in);

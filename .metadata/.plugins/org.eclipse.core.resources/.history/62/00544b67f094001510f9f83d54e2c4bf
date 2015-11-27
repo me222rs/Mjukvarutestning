@@ -20,6 +20,18 @@ public class View {
 		System.out.println("3 - Exit");
 	}
 	
+	public void HowToPlayInstructions(){
+		 String instructions = "This is a yatzee game with our own rules. "
+	   		   		+ "Start the game by pressing Play. "
+	   		   		+ "You will be presented with 5 values which are the dices that were thrown. "
+	   		   		+ "You can now rethrow the dices by typing the position of the dice, "
+	   		   		+ "for multiple dices to rethrow you can separate the positions with a "
+	   		   		+ "space. The score will then be presented after you rethrow. You can only "
+	   		   		+ "rethrow once.";
+		 
+		 System.out.println(instructions);
+	}
+	
 	public ByteArrayInputStream InputStartMenu(){
 		int input;
 		Scanner scanner = new Scanner(System.in);
