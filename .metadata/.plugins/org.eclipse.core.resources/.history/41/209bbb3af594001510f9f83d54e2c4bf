@@ -51,9 +51,7 @@ public class View {
 		//BufferedReader is used so that we can test the menu input
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
 			choiceAsString = reader.readLine();
-			if(choiceAsString == "" || choiceAsString == null){
-				throw new IllegalArgumentException();
-			}
+
 			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException("Error! Only integers allowed.");
 			}
