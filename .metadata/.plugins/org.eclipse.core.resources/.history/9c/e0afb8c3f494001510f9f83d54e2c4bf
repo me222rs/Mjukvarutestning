@@ -669,10 +669,10 @@ public class MVCtest {
 		}
 		
 		@Test (expected = IllegalArgumentException.class)
-		public void Test_MenuNoChoice(){
+		public void Test_RethrowMenuNoChoice(){
 			ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
 		    this.view = new View();
-		    this.view.MenuChoice(in);
+		    int choice = this.view.MenuChoice(in);
 		}
 
 }

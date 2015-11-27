@@ -51,12 +51,13 @@ public class View {
 		//BufferedReader is used so that we can test the menu input
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF8")) ) {
 			choiceAsString = reader.readLine();
-
+			
 			if(!choiceAsString.matches("-?\\d+(\\.\\d+)?")){
 				throw new InputMismatchException("Error! Only integers allowed.");
 			}
 			
 		    choice = Integer.parseInt(choiceAsString);
+		    
 		    if(choice < 1 || choice > 3)
 		    {
 		    	throw new IndexOutOfBoundsException("Error! Input must be in range 1 - 3");
