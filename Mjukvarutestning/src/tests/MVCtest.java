@@ -20,9 +20,7 @@ import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 import Yatzy.Controller;
 import Yatzy.Dice;
 import Yatzy.Model;
-import Yatzy.Points;
 import Yatzy.View;
-import Yatzy.game;
 
 public class MVCtest {
 		Model model = new Model();

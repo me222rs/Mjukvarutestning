@@ -20,7 +20,6 @@ import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 import Yatzy.Controller;
 import Yatzy.Dice;
 import Yatzy.Model;
-import Yatzy.Points;
 import Yatzy.View;
 import Yatzy.game;
 
@@ -255,17 +254,19 @@ public class MVCtest {
   
 			  assertEquals(5, temp.size());
 	   	 }
+	   //Test by Emil & Mikael
 	   	@Test (expected = IndexOutOfBoundsException.class)
 	   	public void Test_ThrowDie_highestValue(){
 	   		Dice d = new Dice();
 	   		d.ThrowDie(1, 7);
 	   	}
-	   	
+	  //Test by Emil & Mikael
 	   	@Test (expected = IndexOutOfBoundsException.class)
 	   	public void Test_ThrowDie_minimumValue(){
 	   		Dice d = new Dice();
 	   		d.ThrowDie(0, 6);
 	   	}
+	  //Test by Emil & Mikael
 	   	@Test
 	   	public void Test_ShowRethrowMenu_View_Output(){
    		   String expected = "\nWhich dice would you like to rethrow? Separate dice positions with a space.\n";
@@ -274,7 +275,7 @@ public class MVCtest {
 	       this.view.ShowRethrowMenu();
 	       assertEquals(expected, outContent.toString());	
 	   	}
-	   	
+	  //Test by Emil & Mikael
 	   	@Test
 	   	public void Test_AfterRethrow_View_Output(){
    		   String expected = "\nThis is your dices after they were rethrown.\n";
@@ -284,7 +285,7 @@ public class MVCtest {
 	       assertEquals(expected, outContent.toString());	
 	   	}
 	   	
-	   	
+	  //Test by Emil & Mikael
 	   	 @Test (expected = IllegalArgumentException.class)
 	   	 public void Test_RethrowDices_NonExistingDice_HighInput(){
 		   
@@ -306,7 +307,7 @@ public class MVCtest {
 
 			  controller.ShowRethrowMenu("1 0"); 
 	   	 }
-	   	
+	  //Test by Emil & Mikael
 	   	@Test
 	   	public void Test_Result_Yatzy(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -336,7 +337,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-	   	
+	  //Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_FullHouse(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -366,7 +367,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_LargeStraight(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -396,7 +397,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_SmallStraight(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -426,7 +427,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_FourOfAKind(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -456,7 +457,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_ThreeOfAKind(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -486,7 +487,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_TwoPair(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -516,7 +517,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_OnePair(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -546,7 +547,7 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
+		//Test by Emil & Mikael
 		@Test
 	   	public void Test_Result_ChanceOrNothing(){
 			   List<Dice>diceList = new ArrayList<Dice>();
@@ -579,13 +580,13 @@ public class MVCtest {
 		       String result = model.CalculatePoints(diceList);
 		       assertEquals(expected,result);
 	   	}
-		
-		public void Test_PointsResult(){
+		//Test by Emil & Mikael
+		@Test
+		public void Test_PointsResult_ConsoleOutput(){
 		       this.view = new View();
-		       System.setOut(new PrintStream(outContent));
 		       
 			   List<Dice>diceList = new ArrayList<Dice>();
-			   String expected = "One pair (4 points)";
+			   String expected = "3 3 6 1 5\nOne pair (4 points)";
 			   
 			   Dice d1 = mock(Dice.class);
 			   when(d1.GetValue()).thenReturn(3);
@@ -607,11 +608,72 @@ public class MVCtest {
 		       diceList.add(d3);
 		       diceList.add(d4);
 		       diceList.add(d5);
-		       
+
 		       String result = model.CalculatePoints(diceList);
+		       System.setOut(new PrintStream(outContent));
+		       view.PrintResult(diceList);
+		       view.PrintPointsResult(result);
 		       
+		       assertEquals(expected, outContent.toString());
 		       	
 		}
+		//Test by Emil & Mikael
+		@Test (expected = IllegalArgumentException.class)
+		public void Test_RethrowStartsWithWhitespace(){
+			  view = new View();
+		   	  controller = new Controller(this.model, this.view);
+		   	  controller.ThrowAllDice(diceList);
 
+			  controller.ShowRethrowMenu(" "); 
+		}
+		//Test by Emil & Mikael
+		@Test (expected = IllegalArgumentException.class)
+		public void Test_RethrowEndsWithWhitespace(){
+			  view = new View();
+		   	  controller = new Controller(this.model, this.view);
+		   	  controller.ThrowAllDice(diceList);
+
+			  controller.ShowRethrowMenu("1 2 "); 
+		}
+		//Test by Mikael
+		@Test (expected = IllegalArgumentException.class)
+		public void Test_RethrowMultipleWhitespaceAfterEachOther(){
+			  view = new View();
+		   	  controller = new Controller(this.model, this.view);
+		   	  controller.ThrowAllDice(diceList);
+
+			  controller.ShowRethrowMenu("1 2  3   4"); 
+		}
+		
+		//Test by Mikael
+	   	@Test
+	   	public void Test_HowToPlayMenuChoice_Output(){
+   		    String expected = "\nThis is a yatzee game with our own rules. Start the game by pressing Play. You will be presented with 5 values which are the dices that were thrown. You can now rethrow the dices by typing the position of the dice, for multiple dices to rethrow you can separate the positions with a space. The score will then be presented after you rethrow. You can only rethrow once.";
+   		   
+			ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
+		    this.view = new View();
+		    int choice = this.view.MenuChoice(in);
+		    this.controller = new Controller(this.model, this.view);
+		    System.setOut(new PrintStream(outContent));
+		    this.controller.SwitchChoice(choice);
+		    
+	        assertEquals(expected, outContent.toString());	
+	   	}
+	  //Test by Mikael
+		@Test (expected = IllegalArgumentException.class)
+		public void Test_RethrowMenuNoChoice(){
+			  view = new View();
+		   	  controller = new Controller(this.model, this.view);
+		   	  controller.ThrowAllDice(diceList);
+
+			  controller.ShowRethrowMenu(""); 
+		}
+		//Test by Mikael
+		@Test (expected = IllegalArgumentException.class)
+		public void Test_MenuNoChoice(){
+			ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
+		    this.view = new View();
+		    this.view.MenuChoice(in);
+		}
 
 }
