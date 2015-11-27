@@ -71,7 +71,6 @@ public class Controller {
 			}
 			case 2:
 			{
-				view.HowToPlayInstructions();
 				break;
 			}
 			case 3:
