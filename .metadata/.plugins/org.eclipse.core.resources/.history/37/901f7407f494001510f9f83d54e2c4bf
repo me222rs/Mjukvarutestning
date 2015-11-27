@@ -102,10 +102,6 @@ public class Controller {
 	
 	//Code by Emil & Mikael
 	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
-		if(dicesToRethrow == "" || dicesToRethrow == null){
-			throw new IllegalArgumentException("You must choose something.");
-		}
-		
 		if(dicesToRethrow.matches("^ .*")){
 			throw new IllegalArgumentException("First character cannot be whitespace.");
 		}
