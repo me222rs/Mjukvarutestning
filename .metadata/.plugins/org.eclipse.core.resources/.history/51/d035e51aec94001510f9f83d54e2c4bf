@@ -104,10 +104,6 @@ public class Controller {
 		if(dicesToRethrow.matches("^ .*")){
 			throw new IllegalArgumentException("First character cannot be whitespace.");
 		}
-		String spaces = "  ";
-		if(dicesToRethrow.toLowerCase().contains(spaces.toLowerCase())){
-			throw new IllegalArgumentException("Two whitespace not allowed.");
-		}
 		
 		if(Character.isWhitespace(dicesToRethrow.charAt(dicesToRethrow.length()-1))){
 			throw new IllegalArgumentException("Last character cannot be whitespace.");
