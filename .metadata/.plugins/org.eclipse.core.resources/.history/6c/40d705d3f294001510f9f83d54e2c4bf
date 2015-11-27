@@ -659,13 +659,15 @@ public class MVCtest {
 	        assertEquals(expected, outContent.toString());	
 	   	}
 	   	
-		@Test (expected = IllegalArgumentException.class)
-		public void Test_NoChoice(){
-			  view = new View();
-		   	  controller = new Controller(this.model, this.view);
-		   	  controller.ThrowAllDice(diceList);
-
-			  controller.ShowRethrowMenu(""); 
-		}
+	   	@Test
+	   	public void Test_HowToPlayMenuChoiceRestart_Output(){
+   		    String expected = "";
+   		   
+			ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
+		    this.view = new View();
+		    int choice = this.view.MenuChoice(in);
+		    
+		    verify(this.controller, times(1)).Start(this.model, this.view);	
+	   	}
 
 }

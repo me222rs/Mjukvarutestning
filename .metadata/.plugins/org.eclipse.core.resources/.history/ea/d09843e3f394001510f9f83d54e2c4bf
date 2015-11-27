@@ -1,0 +1,169 @@
+package Yatzy;
+
+import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.junit.Test;
+
+public class Controller {
+	public Model model;
+	public View view;
+	int min = 1;
+	int max = 6;
+	List<Dice> diceList = new ArrayList<Dice>();
+	
+	public Controller (Model model, View view){
+		model = new Model();
+		view = new View();
+		this.model = model;
+		this.view = view;
+		//Start(this.model, this.view);
+	}
+	
+	public void Start(Model model, View view){
+		model = this.model;
+		view = this.view;
+		view.GetStartMenu();
+		ByteArrayInputStream input = view.InputStartMenu();
+		int choice = view.MenuChoice(input);
+		SwitchChoice(choice);
+	}
+	
+	public List<Dice> ThrowAllDice(List<Dice> diceList){
+		this.diceList = diceList;
+		if(diceList.isEmpty()){
+			for(int i = 0; i < 5;i++){
+				Dice dice = new Dice();
+				dice.ThrowDie(min,max);
+				diceList.add(dice);
+			}
+		}
+		return diceList;
+	}
+	
+	public void SwitchChoice(int choice){
+		List<Dice >diceList = new ArrayList<Dice>();
+		String rethrow;
+		String result = "";
+		
+		List<Dice> diceToBeRethrown;
+		switch(choice){
+			case 1:
+			{
+				diceList = ThrowAllDice(diceList);
+				view.PrintResult(diceList);
+				view.ShowRethrowMenu();
+				rethrow = view.GetRethrow();
+
+				diceToBeRethrown = ShowRethrowMenu(rethrow);
+				diceList = RethrowDice(diceToBeRethrown);
+				
+				view.AfterRethrow();
+				view.PrintResult(diceList);
+				result = model.CalculatePoints(diceList);
+				view.PrintPointsResult(result);
+				break;
+			}
+			case 2:
+			{
+				view.HowToPlayInstructions();
+				break;
+			}
+			case 3:
+			{
+				System.exit(0);
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
+	}
+	
+	public List<Dice> RethrowDice(List<Dice> diceList){
+		for(int i = 0; diceList.size() < 5;i++){
+			Dice d = new Dice();
+			d.ThrowDie(1, 6);
+			diceList.add(d);
+		}
+		return diceList;
+	}
+	
+	public int GetListSize()
+	{
+		return diceList.size();
+	}
+	
+	//Code by Emil & Mikael
+	public List<Dice> ShowRethrowMenu(String dicesToRethrow){
+		if(dicesToRethrow.matches("^ .*")){
+			throw new IllegalArgumentException("First character cannot be whitespace.");
+		}
+		String spaces = "  ";
+		if(dicesToRethrow.toLowerCase().contains(spaces.toLowerCase())){
+			throw new IllegalArgumentException("Two whitespace not allowed after each other.");
+		}
+		
+		if(Character.isWhitespace(dicesToRethrow.charAt(dicesToRethrow.length()-1))){
+			throw new IllegalArgumentException("Last character cannot be whitespace.");
+		}
+		
+		if(!dicesToRethrow.matches("[0-9 ]+")){
+			throw new NumberFormatException("Only numbers allowed!");
+		}
+		
+		if(!dicesToRethrow.matches("[0-5 ]+"))
+		{
+			throw new IllegalArgumentException("Error not in Range of 1-5 input. Dice does not exist");
+		}
+		
+		
+		String[] splitted = dicesToRethrow.split("\\s+");
+		int check = 0;
+		int count =0;
+	    Integer[] ints = new Integer[splitted.length];
+	    
+	    for (int i=0; i < splitted.length; i++) {
+	        ints[i] = Integer.parseInt(splitted[i]);
+	        check = Integer.parseInt(splitted[i]);
+	        
+	        if(count > 0 && check == 0)
+	        {
+		        throw new IllegalArgumentException();
+	        }
+	        
+	        if(check == 0)
+	        {
+    	    	System.out.print("none");
+    	    	return diceList;
+	    	    	
+	        }
+	        count++;
+	    }
+	    
+	    Arrays.sort(ints, Collections.reverseOrder());
+	    
+	    Set<Integer> set = new HashSet<Integer>(Arrays.asList(ints)); 
+	    if(set.size() < ints.length )
+	    {
+	    	throw new IllegalArgumentException("Error!Can't remove the same dice.");
+	    }
+	    
+    
+	    for (int i=0; i < ints.length; i++) {
+	        diceList.remove(ints[i] - 1);
+	        
+	    }
+	    
+		return diceList;
+		
+	}
+	
+	
+}
