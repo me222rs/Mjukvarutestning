@@ -641,7 +641,7 @@ public class MVCtest {
 		   	  controller = new Controller(this.model, this.view);
 		   	  controller.ThrowAllDice(diceList);
 
-			  controller.ShowRethrowMenu("1 2  3   4"); 
+			  controller.ShowRethrowMenu("1 2   3 4"); 
 		}
 
 
