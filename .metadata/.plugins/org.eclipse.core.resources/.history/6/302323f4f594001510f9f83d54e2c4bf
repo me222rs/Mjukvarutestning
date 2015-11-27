@@ -3,7 +3,6 @@ package Yatzy;
 import java.util.List;
 
 public class Model {
-	//Code by Emil & Mikael
 	public String CalculatePoints(List<Dice> diceList){
 		int one = 0;
 		int two = 0;

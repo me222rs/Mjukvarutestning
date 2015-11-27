@@ -38,6 +38,7 @@ public class game {
 	
 	public Dice GetDiceByNumber(int num){
 		return diceList.get(num);
+		
 	}
 	
 	public int ListSize()

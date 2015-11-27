@@ -12,19 +12,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class View {
-	//Code by Emil & Mikael
+	
 	public void GetStartMenu(){
 		System.out.println("----Menu----");
 		System.out.println("1 - Play");
 		System.out.println("2 - How to play");
 		System.out.println("3 - Exit");
 	}
-	//Code by Mikael
+	
 	public void HowToPlayInstructions(){
 		 String instructions = "This is a yatzee game with our own rules. Start the game by pressing Play. You will be presented with 5 values which are the dices that were thrown. You can now rethrow the dices by typing the position of the dice, for multiple dices to rethrow you can separate the positions with a space. The score will then be presented after you rethrow. You can only rethrow once.";
 		 System.out.print("\n"+instructions);
 	}
-	//Code by Emil & Mikael
+	
 	public ByteArrayInputStream InputStartMenu(){
 		int input;
 		Scanner scanner = new Scanner(System.in);
@@ -43,8 +43,6 @@ public class View {
      	ByteArrayInputStream in = new ByteArrayInputStream(inputString.getBytes());
      	return in;
 	}
-	
-	//Code by Emil & Mikael
 	public int MenuChoice(ByteArrayInputStream in)
 	{
 		int choice = 0;
@@ -75,17 +73,22 @@ public class View {
 		return choice;
 		
 	}
-	//Code by Emil & Mikael
+	
 	public String GetRethrow()
 	{
+//		public ByteArrayInputStream InputStartMenu(){
 		String input = null;
 		Scanner scanner = new Scanner(System.in);
-		input = scanner.nextLine();
+		//while(scanner.hasNext())
+		//{
+			input = scanner.nextLine();
+		//}
      	
 		System.out.println(input);
      	return input;
+	
 	}
-	//Code by Emil & Mikael
+
 	public void PrintResult(List<Dice> diceList) {
 		if(diceList.size() != 5)
 		{
@@ -97,15 +100,15 @@ public class View {
 		}
 		System.out.print(out.substring(0,out.length()-1));
 	}
-	//Code by Emil & Mikael
+	
 	public void ShowRethrowMenu(){
 		System.out.print("\nWhich dice would you like to rethrow? Separate dice positions with a space.\n");
 	}
-	//Code by Emil & Mikael
+	
 	public void AfterRethrow(){
 		System.out.print("\nThis is your dices after they were rethrown.\n");	
 	}
-	//Code by Emil & Mikael
+
 	public void PrintPointsResult(String str) {
 		System.out.print("\n" + str);
 	}

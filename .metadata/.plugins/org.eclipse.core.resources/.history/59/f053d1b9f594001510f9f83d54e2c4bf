@@ -24,7 +24,6 @@ public class Controller {
 		this.view = view;
 	}
 	
-	//Code by Emil & Mikael
 	public void Start(Model model, View view){
 		model = this.model;
 		view = this.view;
@@ -33,7 +32,7 @@ public class Controller {
 		int choice = view.MenuChoice(input);
 		SwitchChoice(choice);
 	}
-	//Code by Emil & Mikael
+	
 	public List<Dice> ThrowAllDice(List<Dice> diceList){
 		this.diceList = diceList;
 		if(diceList.isEmpty()){
@@ -45,7 +44,7 @@ public class Controller {
 		}
 		return diceList;
 	}
-	//Code by Emil & Mikael
+	
 	public void SwitchChoice(int choice){
 		List<Dice >diceList = new ArrayList<Dice>();
 		String rethrow;
@@ -86,7 +85,6 @@ public class Controller {
 		}
 	}
 	
-	//Code by Emil & Mikael
 	public List<Dice> RethrowDice(List<Dice> diceList){
 		for(int i = 0; diceList.size() < 5;i++){
 			Dice d = new Dice();
@@ -96,7 +94,6 @@ public class Controller {
 		return diceList;
 	}
 	
-	//Code by Emil & Mikael
 	public int GetListSize()
 	{
 		return diceList.size();
