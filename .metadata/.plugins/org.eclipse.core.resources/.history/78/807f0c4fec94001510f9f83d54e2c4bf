@@ -106,7 +106,7 @@ public class Controller {
 		}
 		String spaces = "  ";
 		if(dicesToRethrow.toLowerCase().contains(spaces.toLowerCase())){
-			throw new IllegalArgumentException("Two whitespace not allowed after each other.");
+			throw new IllegalArgumentException("Two whitespace not allowed.");
 		}
 		
 		if(Character.isWhitespace(dicesToRethrow.charAt(dicesToRethrow.length()-1))){

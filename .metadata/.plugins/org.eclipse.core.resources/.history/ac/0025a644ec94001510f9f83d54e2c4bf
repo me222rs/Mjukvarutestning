@@ -636,7 +636,7 @@ public class MVCtest {
 		}
 		
 		@Test (expected = IllegalArgumentException.class)
-		public void Test_RethrowMultipleWhitespaceAfterEachOther(){
+		public void Test_RethrowMultipleWhitespace(){
 			  view = new View();
 		   	  controller = new Controller(this.model, this.view);
 		   	  controller.ThrowAllDice(diceList);
